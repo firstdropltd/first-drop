@@ -11,8 +11,6 @@ import {
   IconButton,
   Link,
   List,
-  ListItemButton,
-  ListItemText,
   Toolbar,
   Typography,
   styled,
@@ -342,14 +340,14 @@ export default function HomePageLayoutWrapper({
                   </Typography>
                   <Link
                     underline="hover"
-                    href="/company/about-us"
+                    href="/about-us"
                     className="font-helveticaLight font-light text-[15px]/[24px] tracking-[0.20000000298023224px] text-left text-text-primary"
                   >
                     About us
                   </Link>
                   <Link
                     underline="hover"
-                    href="/company/blog"
+                    href="/blog"
                     className="font-helveticaLight font-light text-[15px]/[24px] tracking-[0.20000000298023224px] text-left text-text-primary"
                   >
                     Blog
@@ -366,35 +364,35 @@ export default function HomePageLayoutWrapper({
                   </Typography>
                   <Link
                     underline="hover"
-                    href="/products/plastic-bottles"
+                    href="/products"
                     className="font-helveticaLight font-light text-[15px]/[24px] tracking-[0.20000000298023224px] text-left text-text-primary"
                   >
                     Plastic Bottles
                   </Link>
                   <Link
                     underline="hover"
-                    href="/products/pet-perform"
+                    href="/products"
                     className="font-helveticaLight font-light text-[15px]/[24px] tracking-[0.20000000298023224px] text-left text-text-primary"
                   >
                     PET Perform
                   </Link>{" "}
                   <Link
                     underline="hover"
-                    href="/products/water"
+                    href="/products"
                     className="font-helveticaLight font-light text-[15px]/[24px] tracking-[0.20000000298023224px] text-left text-text-primary"
                   >
                     Water
                   </Link>
                   <Link
                     underline="hover"
-                    href="/products/plastic-jar"
+                    href="/products"
                     className="font-helveticaLight font-light text-[15px]/[24px] tracking-[0.20000000298023224px] text-left text-text-primary"
                   >
                     Plastic Jar
                   </Link>
                   <Link
                     underline="hover"
-                    href="/products/plastic-cups"
+                    href="/products"
                     className="font-helveticaLight font-light text-[15px]/[24px] tracking-[0.20000000298023224px] text-left text-text-primary"
                   >
                     Plastic Cups

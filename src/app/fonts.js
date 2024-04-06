@@ -25,7 +25,7 @@ export const interMedium = localFont({
   variable: "--font-inter-medium",
 })
 export const interSemibold = localFont({
-  src: "../../public/fonts/Inter-semibold.ttf",
+  src: "../../public/fonts/Inter-SemiBold.ttf",
   variable: "--font-inter-semi-bold",
 })
 export const interBold = localFont({
