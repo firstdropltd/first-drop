@@ -1,0 +1,33 @@
+import {
+  helvetica,
+  helveticaBlack,
+  helveticaBold,
+  helveticaLight,
+  helveticaMedium,
+  inter,
+  interBold,
+  interExtraBold,
+  interMedium,
+  interSemibold,
+  roboto,
+  robotoBold,
+  robotoLight,
+  robotoMedium,
+} from "@/app/fonts"
+
+export const Fonts = {
+  primary: `${inter.style.fontFamily}`,
+  primaryMedium: `${interMedium.style.fontFamily}`,
+  primarySemibold: `${interSemibold.style.fontFamily}`,
+  primaryBold: `${interBold.style.fontFamily}`,
+  primaryExtraBold: `${interExtraBold.style.fontFamily}`,
+  secondaryLight: `${helveticaLight.style.fontFamily}`,
+  secondary: `${helvetica.style.fontFamily}`,
+  secondaryMedium: `${helveticaMedium.style.fontFamily}`,
+  secondaryBlack: `${helveticaBlack.style.fontFamily}`,
+  secondaryBold: `${helveticaBold.style.fontFamily}`,
+  defaultLight: `${robotoLight.style.fontFamily}`,
+  default: `${roboto.style.fontFamily}`,
+  defaultMedium: `${robotoMedium.style.fontFamily}`,
+  defaultBold: `${robotoBold.style.fontFamily}`,
+}

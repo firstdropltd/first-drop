@@ -1,0 +1,105 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+:root {
+  --primary: #fe5002;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  color: "#101828";
+}
+@font-face {
+  font-family: "interLight";
+  src: url("/fonts/Inter-Light.ttf");
+  font-weight: 300;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: "inter";
+  src: url("/fonts/Inter-Regular.ttf");
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: "interMedium";
+  src: url("/fonts/Inter-Medium.ttf");
+  font-weight: 500;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: "interSemibold";
+  src: url("/fonts/Inter-semibold.ttf");
+  font-weight: 600;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: "interBold";
+  src: url("/fonts/Inter-Bold.ttf");
+  font-weight: 700;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "helveticaLight";
+  src: url("/fonts/HelveticaNeueLight.otf");
+  font-weight: 300;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: "helvetica";
+  src: url("/fonts/HelveticaNeueRoman.otf");
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: "helveticaMedium";
+  src: url("/fonts/HelveticaNeueMedium.otf");
+  font-weight: 500;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: "helveticaBlack";
+  src: url("/fonts/HelveticaNeueBlack.otf");
+  font-weight: 600;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: "helveticaBold";
+  src: url("/fonts/HelveticaNeueBold.otf");
+  font-weight: 700;
+  font-display: swap;
+  font-style: normal;
+}
+html::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+/* The grabbable scrollbar button  */
+html::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 30;
+  box-shadow: inset 2px 2px 2px hsla(0, 0%, 100%, 0.25),
+    inset -2px -2px 2px rgba(0, 0, 0, 0.25);
+}
+
+/* The vertical scrollbar background */
+html::-webkit-scrollbar-track {
+  background: #d1dadd;
+}
+input::-webkit-inner-spin-button,
+input::-webkit-clear-button {
+  display: none;
+}
