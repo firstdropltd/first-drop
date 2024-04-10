@@ -1,5 +1,11 @@
 "use client"
-import { AngleForward, SupportIcon } from "@/components/SVGs"
+import {
+  AngleForward,
+  CallIcon,
+  ChatIcon,
+  LocationIcon,
+  SupportIcon,
+} from "@/components/SVGs"
 import OurMarketTab from "@/views/AboutUs/outMarketTab"
 import ProductsSlides from "@/views/AboutUs/productswiper"
 import {
@@ -75,7 +81,7 @@ export default function ProductPage() {
               component="div"
               className="w-full xl:w-[268px] h-[190px] xl:h-[290px] flex flex-col gap-16 bg-[#F9FAFB] p-6"
             >
-              <SupportIcon />
+              <ChatIcon />
               <Box className="w-full max-w-[238px] flex flex-col gap-[20px]">
                 <Typography
                   variant="h2"
@@ -103,7 +109,7 @@ export default function ProductPage() {
               component="div"
               className="w-full xl:w-[268px] h-[190px] xl:h-[290px] flex flex-col gap-16 bg-[#F9FAFB] p-6"
             >
-              <SupportIcon />
+              <LocationIcon />
               <Box className="w-full max-w-[238px] flex flex-col gap-[20px]">
                 <Typography
                   variant="h2"
@@ -130,7 +136,7 @@ export default function ProductPage() {
               component="div"
               className="w-full xl:w-[268px] h-[190px] xl:h-[290px] flex flex-col gap-16 bg-[#F9FAFB] p-6"
             >
-              <SupportIcon />
+              <CallIcon />
               <Box className="w-full max-w-[238px] flex flex-col gap-[20px]">
                 <Typography
                   variant="h2"

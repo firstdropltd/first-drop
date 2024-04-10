@@ -5,6 +5,7 @@ import { Fonts } from "@/components/Theme/font"
 import ArrowBackIcon from "@mui/icons-material/ArrowBack"
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward"
 import {
+  Divider,
   Grid,
   Pagination,
   PaginationItem,
@@ -258,7 +259,10 @@ export default function OurProductsTab() {
                 </Grid>
               )
             })}
-            <Grid item xs={12} sx={{ mt: 2 }}>
+            <Grid item xs={12} sx={{ my: 2 }}>
+              <Divider className="border-[#EAECF0]" />
+            </Grid>
+            <Grid item xs={12}>
               <Box className="w-full flex justify-center items-center">
                 <Pagination
                   className="font-interMedium font-medium text-center text-sm text-[#475467]"

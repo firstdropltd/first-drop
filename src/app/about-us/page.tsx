@@ -1,105 +1,46 @@
 "use client"
-import { AngleForward } from "@/components/SVGs"
-import OurMarketTab from "@/views/AboutUs/outMarketTab"
-import ProductsSlides from "@/views/AboutUs/productswiper"
 import { Box, Button, CssBaseline, Divider, Typography } from "@mui/material"
 import Image from "next/image"
 
-export default function ProductPage() {
+export default function AboutUsPage() {
   return (
     <Box className="w-full flex flex-col">
       <CssBaseline />
       <Box
         id="hero-section"
         component="div"
-        className="w-full h-[724px] md:h-[914px] flex flex-col px-2 lg:px-4 py-4 md:py-[100px] relative bg-secondary mt-14 md:mt-1"
+        className="w-full h-[483px] xl:h-[770px] xxl:h-[814px] flex flex-col pl-2 lg:pl-4 py-4 md:py-[120px] relative bg-secondary mt-14 md:mt-1"
       >
-        <Box className="w-full flex flex-col justify-center items-center gap-6">
-          <Box
-            className="w-full max-w-[340px] mt-16 p-[2px] flex justify-start items-center gap-[6px] border border-solid rounded-[6px] border-[#D0D5DD]"
-            sx={{ boxShadow: "0px 1px 2px 0px #1018280D" }}
-          >
-            <Box className="w-[155px] md:w-[185px] px-[4px] flex justify-start items-center border border-solid rounded-[6px] border-primary gap-[6px]">
+        <Box className="w-full pt-10 lg:pt-20 flex flex-col sm:flex-row pl-4 lg:pl-[96px] gap-6">
+          <Box className="w-full flex flex-1 flex-col justify-center items-centergap-6">
+            <Typography
+              variant="h1"
+              className="w-full max-w-[677px] flex justify-start items-start flex-col gap-4 font-medium font-helveticaMedium text-[28px] leading-[38px] md:text-[45px]/[55px] lg:text-[48px]/[60px] xxl:text-[60px]/[79px] text-white text-left sm:tracking-[-3.759999990463257px]"
+            >
+              First Drop aim to be the best in the market.
               <Box
                 component="span"
-                className="text-[6px] text-primary border-[3px] border-[#FE500229]"
-                sx={{ boxShadow: "0px 1px 2px 0px #1018280D;" }}
+                className="w-full max-w-[592px] font-normal font-helvetica text-[18px]/[28px] text-[#C4C4C4] text-left tracking-[0.20000000298023224px]"
               >
-                &#x25CF;
+                Our products are produced in conformity with the Standard
+                Organization of Nigeria (SON), and we are fully registered with
+                National Agency for Food and Drug Administration and Control
+                (NAFDAC RC. 1096978).
               </Box>
-              <Typography
-                variant="caption"
-                className="font-interMedium font-medium text-xs md:text-sm text-[#C4C4C4] text-center"
-              >
-                In business since 2013
-              </Typography>
-            </Box>
-            <Typography
-              variant="caption"
-              className="font-interMedium font-medium text-[9px]/[12px] md:text-sm text-[#C4C4C4] text-center"
-            >
-              ...serving excellence
-            </Typography>
-          </Box>
-          <Box className="w-full flex flex-col justify-center items-center gap-6">
-            <Typography
-              variant="h2"
-              className="w-full flex justify-center items-center flex-col gap-4 max-w-[861px] font-bold font-helveticaBold text-[28px]/[40px] md:text-[48px]/[50px] text-white text-left md:text-center tracking-[0.2px]"
-            >
-              From precision-crafted PET bottles to the purest, most refreshing
-              water
-              <Box
-                component="span"
-                className="w-full max-w-[608px] font-normal font-helvetica text-[18px]/[30px] text-[#C4C4C4] text-center"
-              >
-                We&apos;ve been dedicated to excellence, evolving from bottle
-                manufacturing to the purest most refreshing water with a legacy
-                of nearly a decade
+              <Box className="w-full flex-col md:flex-row flex justify-start items-start gap-4 md:gap-2 my-4">
+                <Button className="w-[111.64px] gap-0 rounded-[16.5px] normal-case bg-primary text-white font-medium font-helveticaMedium text-[15px]/[24px]">
+                  Contact us
+                </Button>
               </Box>
             </Typography>
-            <Box className="w-full flex-col md:flex-row flex justify-center items-center gap-4 md:gap-2 my-4">
-              <Button className="w-full md:w-[111.64px] gap-0 rounded-[16.5px] normal-case bg-primary text-white font-medium font-helveticaMedium text-[15px]/[24px]">
-                Contact us
-              </Button>
-              <Button
-                className="w-full md:w-[141.64px] rounded-[16.5px] bg-white gap-0 normal-case md:bg-transparent text-[#344054] md:text-white font-medium font-helveticaMedium text-[15px]/[24px] tracking-[0.2px]"
-                endIcon={<AngleForward />}
-              >
-                View products
-              </Button>
-            </Box>
           </Box>
-        </Box>
-        <Box
-          sx={{
-            width: "100%",
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          <Box
-            sx={{
-              position: "absolute",
-              top: { xs: 620, sm: 600, md: 550 },
-              width: "100%",
-              maxWidth: 1280,
-              p: "2px 96px 0 96px",
-              background: "transparent",
-            }}
-          >
-            <div className="relative w-full max-w-[1216px] h-[190px] md:h-[480px] cursor-pointer">
-              <div className="aspect-w-16 aspect-h-9">
-                <iframe
-                  className="absolute inset-0 w-full h-full rounded-2xl border-none"
-                  src={`https://www.youtube.com/embed/erGnf7ws20E?autoplay=0&color=white&fs=0&rel=0`}
-                  title="Wall street sense"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                ></iframe>
-              </div>
-            </div>
-          </Box>
+          <Image
+            className="hidden xl:flex w-full h-full  lg:w-[647px] lg:h-[490px]  xxl:w-[840px] xxl:h-[483px] rounded-lg"
+            src="/images/factory-man.png"
+            width={400}
+            height={480}
+            alt="factory man"
+          />
         </Box>
       </Box>
       {/* SECTION TWO */}
@@ -116,23 +57,102 @@ export default function ProductPage() {
             variant="h4"
             className="w-full font-helveticaBold font-bold text-[16px] leading-6 text-left text-primary"
           >
-            Our market
+            Why First Drop
           </Typography>
           <Typography
             variant="h4"
-            className="w-full font-helveticaBold font-bold text-[30px] leading-[38px] md:text-[36px] md:leading-[44px] tracking-[0.20000000298023224px] text-left text-text-primary"
+            className="w-full max-w-[690px] font-helveticaMedium font-medium text-[28px] xl:text-[38px] leading-[38px] xl:leading-[48px] tracking-[-0.2px] text-left text-text-primary"
           >
-            Explore Our PET Bottle Range: Crafting Innovation and Sustainability
-          </Typography>
-          <Typography
-            variant="h4"
-            className="w-full font-helveticaLight font-light text-[18px] leading-[30px] tracking-[0.20000000298023224px] text-left text-[#475467]"
-          >
-            We serves a large variety of markets within the plastics industry.
+            Dedicated to excellence, evolving from bottle manufacturing to
+            delivering the purest, most refreshing water solutions
           </Typography>
         </Box>
-        <Box className="w-full flex">
-          <OurMarketTab />
+        <Box className="w-full max-w-[1080px] flex flex-col lg:flex-row gap-4">
+          <Box
+            component="div"
+            className="w-full xl:w-[270px] h-[150px] xl:h-[208px] flex flex-col gap-4"
+          >
+            <Typography
+              variant="h4"
+              className="w-full flex gap-6 text-text-primary font-medium font-helveticaMedium text-sm leading-6 tracking-[0.20000000298023224px] text-left h-[24px]"
+            >
+              <Divider orientation="vertical" className="border-primary" /> Our
+              aim
+            </Typography>
+            <Typography
+              variant="h2"
+              className="w-full xl:w-[238.31px] text-text-light font-helveticaLight font-light text-[15px]/[24px] traking-[0.20000000298023224px] text-left pl-6"
+            >
+              We aim to maintain long{" "}
+              <span className="text-primary font-medium font-helveticaMedium">
+                term relationship
+              </span>{" "}
+              with our customers and as thus the need the need for our customer
+              are fundamental in all our work.{" "}
+            </Typography>
+          </Box>
+          <Box className="w-full xl:w-[270px] h-[150px] xl:h-[208px] flex flex-col gap-4">
+            {" "}
+            <Typography
+              variant="h4"
+              className="w-full flex gap-6 text-text-primary font-medium font-helveticaMedium text-sm leading-6 tracking-[0.20000000298023224px] text-left h-[24px]"
+            >
+              <Divider orientation="vertical" className="border-primary" />
+              Our commitment
+            </Typography>
+            <Typography
+              variant="h2"
+              className="w-full xl:w-[260px] text-text-light font-helveticaLight font-light text-[15px]/[24px] traking-[0.20000000298023224px] text-left pl-6"
+            >
+              We are commitment to our{" "}
+              <span className="text-primary font-medium font-helveticaMedium">
+                customers satisfaction
+              </span>{" "}
+              at First Drop and will continue to produce products to the highest
+              quality standards that meet specification.
+            </Typography>
+          </Box>
+          <Box className="w-full xl:w-[270px] h-[150px] xl:h-[208px] flex flex-col gap-4">
+            {" "}
+            <Typography
+              variant="h4"
+              className="w-full flex gap-6 text-text-primary font-medium font-helveticaMedium text-sm leading-6 tracking-[0.20000000298023224px] text-left h-[24px]"
+            >
+              <Divider orientation="vertical" className="border-primary" /> Our
+              quality policy
+            </Typography>
+            <Typography
+              variant="h2"
+              className="w-full xl:w-[230.31px] text-text-light font-helveticaLight font-light text-[15px]/[24px] traking-[0.20000000298023224px] text-left pl-6"
+            >
+              We have established{" "}
+              <span className="text-primary font-medium font-helveticaMedium">
+                quality
+              </span>{" "}
+              policy statement appropriate for the needs of our organization and
+              customers, to a continual improvement.
+            </Typography>
+          </Box>
+          <Box className="w-full xl:w-[270px] h-[150px] xl:h-[208px] flex flex-col gap-4">
+            <Typography
+              variant="h4"
+              className="w-full flex gap-6 text-text-primary font-medium font-helveticaMedium text-sm leading-6 tracking-[0.20000000298023224px] text-left h-[24px]"
+            >
+              <Divider orientation="vertical" className="border-primary" /> Our
+              environment
+            </Typography>
+            <Typography
+              variant="h2"
+              className="w-full xl:w-[220.31px] text-text-light font-helveticaLight font-light text-[15px]/[24px] traking-[0.20000000298023224px] text-left pl-6"
+            >
+              We take our{" "}
+              <span className="text-primary font-medium font-helveticaMedium">
+                environmental
+              </span>{" "}
+              responsibilities seriously. With our research into possible uses
+              of recycled materials without compromise{" "}
+            </Typography>
+          </Box>
         </Box>
       </Box>
       {/* SECTION THREE */}
@@ -153,39 +173,29 @@ export default function ProductPage() {
               <Box component="div" className="w-full flex flex-col gap-5">
                 <Typography
                   variant="h4"
-                  className="w-full font-helveticaBold font-bold text-[16px] leading-6 text-left text-primary"
+                  className="w-full font-helveticaMedium font-medium text-[17px] leading-[28px] text-left text-primary tracking-[0.20000000298023224px]"
                 >
-                  Our products
+                  First Drops
                 </Typography>
                 <Typography
                   variant="h4"
-                  className="w-full max-w-[461.53px] font-interSemibold font-semibold text-[36px] leading-[44px] tracking-[0.20000000298023224px] text-left text-white"
+                  className="w-full max-w-[564px] font-helveticaMedium font-medium text-[36px] leading-[48px] tracking-[-0.20000000298023224px] text-left text-white"
                 >
-                  There&apos;s a portable size product for every moment in your
-                  day.
+                  Transforming PET Manufacturing and Refreshing Water
                 </Typography>
                 <Typography
                   variant="h4"
-                  className="w-full max-w-[432.68px] font-helveticaLight font-light text-[18px] leading-[30px] tracking-[0.20000000298023224px] text-left text-[#ADBDCC]"
+                  className="w-full max-w-[406.4px] font-helveticaLight font-light text-[18px] leading-[28px] tracking-[0.20000000298023224px] text-left text-[#ADBDCC]"
                 >
-                  From portable on-the-go sizes that effortlessly fit in your
-                  bag to exclusive designer bottles crafted to elevate any
-                  occasion.
+                  At First Drops, we bring innovation and sustainability to the
+                  forefront of our craft. With decades of experience in PET
+                  manufacturing and delivering pure, refreshing water solutions,
+                  our passion drives us to{" "}
+                  <span className="text-primary font-helveticaMedium font-medium">
+                    excel in every aspect of our business.
+                  </span>
                 </Typography>
-                <Button
-                  className="w-[141.64px] gap-0 rounded-[16.5px] normal-case bg-primary text-white font-medium font-helveticaMedium text-[15px]/[24px] tracking-[0.2px]"
-                  endIcon={<AngleForward />}
-                >
-                  View products
-                </Button>
               </Box>
-              <Image
-                className="w-full h-full hidden lg:flex sm:w-[280px] sm:h-[280px] lg:w-[480px] lg:h-[380px] xxl:w-[540px] xxl:h-[345px] rounded-lg"
-                src="/images/pouring-water.jpeg"
-                width={280}
-                height={280}
-                alt="plastic bottle"
-              />
             </Box>
             <Box className="w-full overflow-hidden skew-bottom mt-6">
               <Box component="div" className="w-full -skew-y-6 bg-transparant">
@@ -193,36 +203,85 @@ export default function ProductPage() {
                   component="div"
                   className="w-full skew-y-6  bg-transparant"
                 >
-                  <ProductsSlides />
+                  <Box className="w-full max-w-[1080px] flex flex-col lg:flex-row lg:gap-4">
+                    <Box
+                      component="div"
+                      className="w-full xl:w-[270px] h-[120px] flex flex-col gap-4"
+                    >
+                      <Typography
+                        variant="h4"
+                        className="w-full flex gap-6 text-white font-medium font-helveticaMedium text-[24px] leading-8 tracking-[0.10000000149011612px] text-left h-[24px]"
+                      >
+                        <Divider
+                          orientation="vertical"
+                          className="border-primary"
+                        />{" "}
+                        10 years+
+                      </Typography>
+                      <Typography
+                        variant="h2"
+                        className="w-full xl:w-[238.31px] text-[#ADBDCC] font-helveticaLight font-light text-[15px]/[24px] traking-[0.20000000298023224px] text-left pl-6"
+                      >
+                        We have cultivated a legacy of trust and reliability.
+                      </Typography>
+                    </Box>
+                    <Box className="w-full xl:w-[270px] h-[120px] flex flex-col gap-4">
+                      <Typography
+                        variant="h4"
+                        className="w-full flex gap-6 text-white font-medium font-helveticaMedium text-[22px] leading-8 tracking-[0.10000000149011612px] text-left h-[24px]"
+                      >
+                        <Divider
+                          orientation="vertical"
+                          className="border-primary"
+                        />{" "}
+                        35+
+                      </Typography>
+                      <Typography
+                        variant="h2"
+                        className="w-full xl:w-[238.31px] text-[#ADBDCC] font-helveticaLight font-light text-[15px]/[24px] traking-[0.20000000298023224px] text-left pl-6"
+                      >
+                        Precision-crafted PET bottles from a diverse range.
+                      </Typography>
+                    </Box>
+                    <Box className="w-full xl:w-[270px] h-[120px] flex flex-col gap-4">
+                      <Typography
+                        variant="h4"
+                        className="w-full flex gap-6 text-white font-medium font-helveticaMedium text-[22px] leading-8 tracking-[0.10000000149011612px] text-left h-[24px]"
+                      >
+                        <Divider
+                          orientation="vertical"
+                          className="border-primary"
+                        />{" "}
+                        122+
+                      </Typography>
+                      <Typography
+                        variant="h2"
+                        className="w-full xl:w-[238.31px] text-[#ADBDCC] font-helveticaLight font-light text-[15px]/[24px] traking-[0.20000000298023224px] text-left pl-6"
+                      >
+                        Dedicated employees behind our success.
+                      </Typography>
+                    </Box>
+                    <Box className="w-full xl:w-[270px] h-[120px] flex flex-col gap-4">
+                      <Typography
+                        variant="h4"
+                        className="w-full flex gap-6 text-white font-medium font-helveticaMedium text-[24px] leading-8 tracking-[0.10000000149011612px] text-left h-[24px]"
+                      >
+                        <Divider
+                          orientation="vertical"
+                          className="border-primary"
+                        />{" "}
+                        1000+
+                      </Typography>
+                      <Typography
+                        variant="h2"
+                        className="w-full xl:w-[238.31px] text-[#ADBDCC] font-helveticaLight font-light text-[15px]/[24px] traking-[0.20000000298023224px] text-left pl-6"
+                      >
+                        Unique PET bottles manufactured for customers.
+                      </Typography>
+                    </Box>
+                  </Box>
                 </Box>
               </Box>
-            </Box>
-            <Divider className="border-border mt-8 md:hidden" />
-
-            <Box
-              component="div"
-              className="w-full max-w-[768px] mt-8 flex flex-col gap-5"
-            >
-              <Typography
-                variant="h4"
-                className="w-full max-w-[461.53px] font-helveticaMedium font-medium text-[23px] leading-8 tracking-[0.1px] text-left text-white"
-              >
-                Have a specific product in mind?
-              </Typography>
-              <Typography
-                variant="h4"
-                className="w-full max-w-[432.68px] font-helveticaLight font-light text-[18px] leading-[28px] tracking-[0.20000000298023224px] text-left text-white"
-              >
-                Curious to see where the magic happens? Schedule an appointment
-                to tour our state-of-the-art factory and witness firsthand the
-                craftsmanship behind our products.
-              </Typography>
-              <Button
-                className="w-[182.64px] gap-0 rounded-[16.5px] normal-case bg-primary text-white font-medium font-helveticaMedium text-[15px]/[24px] tracking-[0.2px]"
-                endIcon={<AngleForward />}
-              >
-                Book appointment
-              </Button>
             </Box>
           </Box>
         </div>

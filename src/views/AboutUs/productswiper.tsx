@@ -11,7 +11,7 @@ export default function ProductsSlides() {
     <Box className="relative w-full mt-4">
       <Swiper
         slidesPerView={1.1}
-        spaceBetween={10}
+        spaceBetween={25}
         breakpoints={{
           640: {
             slidesPerView: 2,
@@ -27,7 +27,7 @@ export default function ProductsSlides() {
           },
           1280: {
             slidesPerView: 3,
-            spaceBetween: 0,
+            spaceBetween: 20,
           },
         }}
         autoplay={{
@@ -59,10 +59,11 @@ export default function ProductsSlides() {
                 width: "100%",
                 height: "100%",
                 position: "relative",
+                margin: 0,
               }}
             >
               <Image
-                className="w-full h-full sm:w-[260px] sm:h-[250px] lg:w-[350px] lg:h-[380px] xxl:w-[469.27px] xxl:h-[320px] rounded-lg"
+                className="w-full h-[472px] sm:w-[260px] sm:h-[250px] lg:w-[350px] lg:h-[380px] xxl:w-[460.27px] xxl:h-[300px] rounded-lg"
                 src={item.imgSrc}
                 width={300}
                 height={250}
