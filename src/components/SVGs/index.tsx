@@ -1,18 +1,15 @@
-import React from "react"
-import { Colors } from "../Theme/colors"
-
 export function MenuIcon() {
   return (
     <svg
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
+      width="40"
+      height="40"
+      viewBox="0 0 40 40"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
-        d="M3 12H21M3 6H21M9 18H21"
-        stroke="currentcolor"
+        d="M11 20H29M11 14H29M11 26H29"
+        stroke="#344054"
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -192,15 +189,15 @@ export function ArrowForward(props: any) {
 export function CloseIcon() {
   return (
     <svg
-      width="12"
-      height="12"
-      viewBox="0 0 12 12"
-      fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      width="32"
+      height="32"
+      viewBox="0 0 32 32"
+      fill="none"
     >
       <path
-        d="M9 3L3 9M3 3L9 9"
-        stroke="#98A2B3"
+        d="M9.01074 22.9907L16.0014 16L22.9921 22.9907M22.9921 9.00933L16.0001 16L9.01074 9.00933"
+        stroke="#8C8C8C"
         strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -247,9 +244,21 @@ export function SearchIcon() {
   )
 }
 export function ArrowUp() {
-  return(
-<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M7 17L17 7M17 7H7M17 7V17" stroke="#101828" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-</svg>
-)
+  return (
+    <svg
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M7 17L17 7M17 7H7M17 7V17"
+        stroke="#101828"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  )
 }

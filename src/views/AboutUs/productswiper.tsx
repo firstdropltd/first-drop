@@ -63,7 +63,7 @@ export default function ProductsSlides() {
               }}
             >
               <Image
-                className="w-full h-[472px] sm:w-[260px] sm:h-[250px] lg:w-[350px] lg:h-[380px] xxl:w-[460.27px] xxl:h-[300px] rounded-lg"
+                className="w-full h-[352px] sm:w-[260px] sm:h-[250px] lg:w-[350px] lg:h-[380px] xxl:w-[460.27px] xxl:h-[355px] rounded-lg aspect-square"
                 src={item.imgSrc}
                 width={300}
                 height={250}

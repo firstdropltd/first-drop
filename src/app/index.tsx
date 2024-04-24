@@ -95,9 +95,6 @@ export default function HomePageLayoutWrapper({
   const isInView = useInView(ref, { once: true })
   const mainControls = useAnimation()
   const [mobileOpen, setMobileOpen] = React.useState(false)
-  const [openNest, setOpenNest] = React.useState("")
-  const [anchorEl, setAnchorEl] = React.useState(null)
-  const open = Boolean(anchorEl)
   const today = new Date()
   const year = today.getFullYear()
 
@@ -107,13 +104,7 @@ export default function HomePageLayoutWrapper({
     }
   }, [isInView, mainControls])
   const handleDrawerToggle = () => setMobileOpen(!mobileOpen)
-  const handlePopoverOpen = (event: any) => {
-    setAnchorEl(event.currentTarget)
-  }
 
-  const handlePopoverClose = () => {
-    setAnchorEl(null)
-  }
   const handleClick = (item: { name: string; link: string }, index: number) => {
     router.push(item.link)
     setMobileOpen(false)
@@ -124,19 +115,18 @@ export default function HomePageLayoutWrapper({
         display: "flex",
         flexDirection: "column",
         gap: "16px",
+        paddingTop: 16,
       }}
     >
-      <Toolbar
-        sx={{ minHeight: `50px !important`, padding: `16px !important` }}
-      >
+      <Toolbar sx={{ minHeight: `50px !important` }}>
         <Link underline="none" href="/">
-          <Image src="/images/logo.svg" width={80} height={80} alt="logo" />
+          <Image src="/images/logo.svg" width={50} height={50} alt="logo" />
         </Link>
         <Box
           sx={{
             display: { xs: "block", md: "none" },
             position: "absolute",
-            top: 20,
+            top: 0,
             right: 16,
             left: "auto",
           }}
@@ -183,10 +173,16 @@ export default function HomePageLayoutWrapper({
             },
           }}
         >
-          <StyledList className="w-full flex flex-col" disablePadding>
+          <StyledList
+            className="w-full flex flex-col justify-start items-start"
+            disablePadding
+          >
             {menu?.map((item, index) => {
               let itemName = updateKey(item.name.toLowerCase())
-              const selected = pathname.startsWith(`/${itemName}`)
+              // const selected = pathname.startsWith(`/${itemName}`)
+              const selected =
+                pathname.startsWith(`/${itemName}`) ||
+                (pathname === "/" && item.name.toLowerCase() === "home")
               return (
                 <Box component="div" key={index + 1}>
                   <Button
@@ -194,8 +190,8 @@ export default function HomePageLayoutWrapper({
                     onClick={() => handleClick(item, index)}
                     className={
                       selected
-                        ? "w-full font-helveticaMedium font-medium text-sm leading-6 trackking-[0.20000000298023224px] text-center text-primary capitalize"
-                        : "w-full font-helveticaMedium font-medium text-sm leading-6 trackking-[0.20000000298023224px] text-center text-secondary capitalize"
+                        ? "w-full font-helveticaMedium font-medium text-sm leading-6 trackking-[0.20000000298023224px] text-left text-primary capitalize flex justify-start items-start"
+                        : "w-full font-helveticaMedium font-medium text-sm leading-6 trackking-[0.20000000298023224px] text-left text-secondary capitalize flex justify-start items-start"
                     }
                   >
                     {item.name}
@@ -223,9 +219,9 @@ export default function HomePageLayoutWrapper({
         <AppBar
           position="fixed"
           sx={{ zIndex: (theme) => (mobileOpen ? 1 : theme.zIndex.drawer + 1) }}
-          className="w-full h-[68px] bg-[#FFF] shadow-none px-2 md:px-[96px]"
+          className="w-full h-[68px] bg-[#FFF] shadow-none px-2 md:px-[40px] xxl:px-[96px]"
         >
-          <Toolbar className="w-full justify-between">
+          <Toolbar className="w-full justify-between pt-1">
             <Link underline="none" href="/" className="hidden md:flex">
               <Image
                 src="/images/logo.svg"
@@ -235,12 +231,15 @@ export default function HomePageLayoutWrapper({
               />
             </Link>
             <Link underline="none" href="/" className="flex md:hidden">
-              <Image src="/images/logo.svg" width={80} height={65} alt="logo" />
+              <Image src="/images/logo.svg" width={50} height={50} alt="logo" />
             </Link>
             <StyledList disablePadding className="hidden md:flex">
               {menu?.map((item, index) => {
                 let itemName = updateKey(item.name.toLowerCase())
-                const selected = pathname.startsWith(`/${itemName}`)
+                const selected =
+                  pathname.startsWith(`/${itemName}`) ||
+                  (pathname === "/" && item.name.toLowerCase() === "home")
+
                 return (
                   <Button
                     key={index}
@@ -265,9 +264,6 @@ export default function HomePageLayoutWrapper({
                 display: { sm: "none" },
                 background: Colors.white,
                 color: Colors.text,
-                width: 30,
-                height: 30,
-                borderRadius: 1,
                 "&:hover": {
                   background: Colors.white,
                   color: Colors.text,
@@ -283,6 +279,7 @@ export default function HomePageLayoutWrapper({
           <Drawer
             variant="temporary"
             open={mobileOpen}
+            anchor="right"
             onClose={handleDrawerToggle}
             ModalProps={{
               keepMounted: true,
@@ -315,22 +312,18 @@ export default function HomePageLayoutWrapper({
           <CssBaseline />
           {children}
         </Box>
-        <Box className="w-full grow flex shrink-0 bg-[#F6F9FC] pt-[56px] px-[32px] pr-[55.8px] flex-wrap gap-2 justify-center items-center">
-          <Box className="w-full max-w-[1280px] flex gap-4 md:gap-8">
+        <Box className="w-full grow flex shrink-0 bg-[#F6F9FC] pt-[0px] md:pt-[56px] px-[28px] flex-wrap gap-2 justify-center items-center">
+          <Box className="w-full items-center justify-center gap-4 pt-[40px] pb-[20px] px-0 flex md:hidden">
+            <Typography
+              variant="h4"
+              className="font-light font-helveticaLight text-[15px]/[24px] text-center trecking-[0.20000000298023224px]"
+            >
+              © {year} First Drop Nig. Limited. All rights reserved.
+            </Typography>
+          </Box>
+          <Box className="hidden w-full max-w-[1064px] md:flex gap-4 md:gap-8 pt-[56px]">
             <Grid container spacing={3}>
-              <Grid item xs={12} sm={3} md={2} className="mr-8">
-                <Box className="w-full max-w-[219.52px] flex flex-col flex-1 gap-4">
-                  <Link underline="none" href="/">
-                    <Image
-                      src="/images/logo.svg"
-                      width={100}
-                      height={80}
-                      alt="logo"
-                    />
-                  </Link>
-                </Box>
-              </Grid>
-              <Grid item xs={6} sm={3} md={2}>
+              <Grid item xs={6} sm={3}>
                 <Box className="w-full md:w-[180xp] flex flex-col gap-[14px] items-start">
                   <Typography
                     variant="h4"
@@ -354,7 +347,7 @@ export default function HomePageLayoutWrapper({
                   </Link>{" "}
                 </Box>
               </Grid>
-              <Grid item xs={6} sm={3} md={2}>
+              <Grid item xs={6} sm={3}>
                 <Box className="w-full md:w-[180xp] flex flex-col gap-[14px] items-start">
                   <Typography
                     variant="h4"
@@ -399,7 +392,7 @@ export default function HomePageLayoutWrapper({
                   </Link>
                 </Box>
               </Grid>
-              <Grid item xs={6} sm={3} md={2}>
+              <Grid item xs={6} sm={3}>
                 <Box className="w-full md:w-[180xp] flex flex-col gap-[14px] items-start">
                   <Typography
                     variant="h4"
@@ -441,7 +434,7 @@ export default function HomePageLayoutWrapper({
                   </Link>
                 </Box>
               </Grid>
-              <Grid item xs={6} sm={3} md={2}>
+              <Grid item xs={6} sm={3}>
                 <Box className="w-full md:w-[180xp] flex flex-col gap-[14px] items-start">
                   <Typography
                     variant="h4"
@@ -449,21 +442,23 @@ export default function HomePageLayoutWrapper({
                   >
                     Contact
                   </Typography>
-                  <Typography
-                    variant="subtitle1"
+                  <Link
+                    href="tel: +2348033497101"
+                    underline="hover"
                     className="font-helveticaLight font-light text-[15px]/[24px] tracking-[0.20000000298023224px] text-left text-text-primary"
                   >
-                    +234 816 526 3668
-                  </Typography>
-                  <Typography
-                    variant="subtitle1"
+                    +2348033497101
+                  </Link>
+                  <Link
+                    href="tel: +2347038287302"
+                    underline="hover"
                     className="font-helveticaLight font-light text-[15px]/[24px] tracking-[0.20000000298023224px] text-left text-text-primary"
                   >
-                    +234 813 553 5616
-                  </Typography>
+                    +2347038287302
+                  </Link>
                   <Link
                     underline="hover"
-                    href="mailto:hello@firstdropsng@gmail.com"
+                    href="mailto:firstdropsng@gmail.com"
                     className="font-helveticaLight font-light text-[15px]/[24px] tracking-[0.20000000298023224px] text-left text-text-primary"
                   >
                     firstdropsng@gmail.com
@@ -478,12 +473,166 @@ export default function HomePageLayoutWrapper({
               </Grid>
             </Grid>
           </Box>
-          <Box className="w-full flex items-center justify-center gap-4 pt-[40px] pb-[20px] px-0">
+
+          <Box className="w-full flex md:hidden">
+            <Grid container spacing={3}>
+              <Grid item xs={6}>
+                <Box className="w-full md:w-[180xp] flex flex-col gap-[14px] items-start">
+                  <Typography
+                    variant="h4"
+                    className="font-helveticaMedium font-medium text-sm/[24px] tracking-[0.20000000298023224px] text-left text-text-primary"
+                  >
+                    Products
+                  </Typography>
+                  <Link
+                    underline="hover"
+                    href="/products"
+                    className="font-helveticaLight font-light text-[15px]/[24px] tracking-[0.20000000298023224px] text-left text-text-primary"
+                  >
+                    Plastic Bottles
+                  </Link>
+                  <Link
+                    underline="hover"
+                    href="/products"
+                    className="font-helveticaLight font-light text-[15px]/[24px] tracking-[0.20000000298023224px] text-left text-text-primary"
+                  >
+                    PET Perform
+                  </Link>{" "}
+                  <Link
+                    underline="hover"
+                    href="/products"
+                    className="font-helveticaLight font-light text-[15px]/[24px] tracking-[0.20000000298023224px] text-left text-text-primary"
+                  >
+                    Water
+                  </Link>
+                  <Link
+                    underline="hover"
+                    href="/products"
+                    className="font-helveticaLight font-light text-[15px]/[24px] tracking-[0.20000000298023224px] text-left text-text-primary"
+                  >
+                    Plastic Jar
+                  </Link>
+                  <Link
+                    underline="hover"
+                    href="/products"
+                    className="font-helveticaLight font-light text-[15px]/[24px] tracking-[0.20000000298023224px] text-left text-text-primary"
+                  >
+                    Plastic Cups
+                  </Link>
+                </Box>
+              </Grid>
+              <Grid item xs={6}>
+                <Box className="w-full md:w-[180xp] flex flex-col gap-[14px] items-start">
+                  <Typography
+                    variant="h4"
+                    className="font-helveticaMedium font-medium text-sm/[24px] tracking-[0.20000000298023224px] text-left text-text-primary"
+                  >
+                    Company
+                  </Typography>
+                  <Link
+                    underline="hover"
+                    href="/about-us"
+                    className="font-helveticaLight font-light text-[15px]/[24px] tracking-[0.20000000298023224px] text-left text-text-primary"
+                  >
+                    About us
+                  </Link>
+                  <Link
+                    underline="hover"
+                    href="/blog"
+                    className="font-helveticaLight font-light text-[15px]/[24px] tracking-[0.20000000298023224px] text-left text-text-primary"
+                  >
+                    Blog
+                  </Link>{" "}
+                </Box>
+              </Grid>
+              <Grid item xs={6} />
+              <Grid item xs={6} className="relative top-[-90px]">
+                <Box className="w-full md:w-[180xp] flex flex-col gap-[14px] items-start">
+                  <Typography
+                    variant="h4"
+                    className="font-helveticaMedium font-medium text-sm/[24px] tracking-[0.20000000298023224px] text-left text-text-primary"
+                  >
+                    Social
+                  </Typography>
+                  <Link
+                    underline="none"
+                    href="https://www.instagram.com/firstdropsng/"
+                    target="_blank"
+                    className="font-helveticaLight font-light text-[15px]/[24px] tracking-[0.20000000298023224px] text-left text-text-primary"
+                  >
+                    Instagram
+                  </Link>
+                  <Link
+                    underline="none"
+                    href="https://www.facebook.com/firstdropsng/"
+                    target="_blank"
+                    className="font-helveticaLight font-light text-[15px]/[24px] tracking-[0.20000000298023224px] text-left text-text-primary"
+                  >
+                    Facebook
+                  </Link>
+                  <Link
+                    underline="none"
+                    href="https://twitter.com/firstdropsng"
+                    target="_blank"
+                    className="font-helveticaLight font-light text-[15px]/[24px] tracking-[0.20000000298023224px] text-left text-text-primary"
+                  >
+                    Twitter
+                  </Link>
+                  <Link
+                    underline="none"
+                    href="https://www.tiktok.com/firstdropsng/"
+                    target="_blank"
+                    className="font-helveticaLight font-light text-[15px]/[24px] tracking-[0.20000000298023224px] text-left text-text-primary"
+                  >
+                    Tiktok
+                  </Link>
+                </Box>
+              </Grid>
+              <Grid item xs={12} className="relative top-[-180px]">
+                <Box className="w-full md:w-[180xp] flex flex-col gap-[14px] items-start">
+                  <Typography
+                    variant="h4"
+                    className="font-helveticaMedium font-medium text-sm/[24px] tracking-[0.20000000298023224px] text-left text-text-primary"
+                  >
+                    Contact
+                  </Typography>
+                  <Link
+                    href="tel: +234 8033497101"
+                    underline="hover"
+                    className="font-helveticaLight font-light text-[15px]/[24px] tracking-[0.20000000298023224px] text-left text-text-primary"
+                  >
+                    +234 8033497101
+                  </Link>
+                  <Link
+                    href="tel: +234 7038287302"
+                    underline="hover"
+                    className="font-helveticaLight font-light text-[15px]/[24px] tracking-[0.20000000298023224px] text-left text-text-primary"
+                  >
+                    +234 7038287302
+                  </Link>
+                  <Link
+                    underline="hover"
+                    href="mailto:firstdropsng@gmail.com"
+                    className="w-full font-helveticaLight font-light text-[15px]/[24px] tracking-[0.20000000298023224px] text-left text-text-primary"
+                  >
+                    firstdropsng@gmail.com
+                  </Link>
+                  <Typography
+                    variant="subtitle1"
+                    className="w-full font-helveticaLight font-light text-[14.5px]/[24px] tracking-[0.20000000298023224px] text-left text-text-primary"
+                  >
+                    Plot no 85, Sector - center F, Karmo, FCT-Abuja.
+                  </Typography>
+                </Box>
+              </Grid>
+            </Grid>
+          </Box>
+          <Box className="w-full items-center justify-center gap-4 pt-[40px] pb-[20px] px-0 hidden md:flex">
             <Typography
               variant="h4"
               className="font-light font-helveticaLight text-[15px]/[24px] text-center trecking-[0.20000000298023224px]"
             >
-              © {year} First Drops Nig. Limited. All rights reserved.
+              © {year} First Drop Nig. Limited. All rights reserved.
             </Typography>
           </Box>
         </Box>

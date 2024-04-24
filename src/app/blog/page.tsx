@@ -21,15 +21,14 @@ export default function ProductPage() {
             </Typography>
             <Typography
               variant="h1"
-              className="w-full flex justify-center items-center flex-col font-bold font-helveticaBold text-[36px]/[44px] md:text-[50px]/[60px] lg:text-[50px]/[65px] xxl:text-[65px]/[79px] text-white text-center md:text-left tracking-[0.2px] gap-4 md:gap-2 "
+              className="w-full flex justify-center items-center flex-col font-bold font-helveticaBold text-[38px]/[44px] md:text-[48px]/[60px] text-white text-center md:text-left tracking-[0.2px] gap-4 md:gap-2 "
             >
-              Stories and interviews at First Drops
+              Stories and interviews at First Drops{" "}
               <Box
                 component="span"
                 className="w-full max-w-[768px] font-normal font-inter md:font-helvetica text-[18px]/[28px] text-[#C4C4C4] text-center"
               >
-                Discover a Cascade of Insights: Stay Updated with the Latest
-                Stories and Exclusive Interviews at First Drops Blog
+                Read, watch, and be a part of the movement{" "}
               </Box>
             </Typography>
           </Box>

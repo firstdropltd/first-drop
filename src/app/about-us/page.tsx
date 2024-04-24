@@ -9,49 +9,52 @@ export default function AboutUsPage() {
       <Box
         id="hero-section"
         component="div"
-        className="w-full h-[483px] xl:h-[770px] xxl:h-[814px] flex flex-col pl-2 lg:pl-4 py-4 md:py-[120px] relative bg-secondary mt-14 md:mt-1"
+        className="w-full h-[583px] xl:h-[770px] xxl:h-[600px] flex flex-col pb-4 pt-[80px] px-4 lg:mt-0 md:py-[120px] relative bg-secondary"
+        sx={{
+          backgroundColor: "#101828",
+          backgroundImage: {
+            xs: "transparent",
+            sm: `url("/images/product-hero.svg")`,
+          },
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+        }}
       >
-        <Box className="w-full pt-10 lg:pt-20 flex flex-col sm:flex-row pl-4 lg:pl-[96px] gap-6">
-          <Box className="w-full flex flex-1 flex-col justify-center items-centergap-6">
+        <Box className="w-full pt-[100px] lg:pt-20 flex flex-col sm:flex-row pl-4 lg:pl-[96px] gap-6 justify-center items-center">
+          <Box className="w-full flex flex-1 flex-col justify-center items-center gap-6">
             <Typography
               variant="h1"
-              className="w-full max-w-[677px] flex justify-start items-start flex-col gap-4 font-medium font-helveticaMedium text-[28px] leading-[38px] md:text-[45px]/[55px] lg:text-[48px]/[60px] xxl:text-[60px]/[79px] text-white text-left sm:tracking-[-3.759999990463257px]"
+              className="w-full max-w-[677px] flex justify-center items-center flex-col gap-4 font-medium font-helveticaMedium text-[28px] leading-[38px] md:text-[45px]/[55px] lg:text-[48px]/[60px] xxl:text-[60px]/[57px] text-white text-center sm:tracking-[-3.76px]"
             >
               First Drop aim to be the best in the market.
               <Box
                 component="span"
-                className="w-full max-w-[592px] font-normal font-helvetica text-[18px]/[28px] text-[#C4C4C4] text-left tracking-[0.20000000298023224px]"
+                className="w-full max-w-[712px] font-normal font-helvetica text-[18px]/[28px] text-[#C4C4C4] text-center tracking-[0.2px]"
               >
                 Our products are produced in conformity with the Standard
                 Organization of Nigeria (SON), and we are fully registered with
                 National Agency for Food and Drug Administration and Control
                 (NAFDAC RC. 1096978).
               </Box>
-              <Box className="w-full flex-col md:flex-row flex justify-start items-start gap-4 md:gap-2 my-4">
+              <Box className="w-full flex-col md:flex-row flex justify-center items-center gap-4 md:gap-2 my-4">
                 <Button className="w-[111.64px] gap-0 rounded-[16.5px] normal-case bg-primary text-white font-medium font-helveticaMedium text-[15px]/[24px]">
                   Contact us
                 </Button>
               </Box>
             </Typography>
           </Box>
-          <Image
-            className="hidden xl:flex w-full h-full  lg:w-[647px] lg:h-[490px]  xxl:w-[840px] xxl:h-[483px] rounded-lg"
-            src="/images/factory-man.png"
-            width={400}
-            height={480}
-            alt="factory man"
-          />
         </Box>
       </Box>
       {/* SECTION TWO */}
       <Box
         component="section"
         id="our-market"
-        className="w-full flex flex-col pt-[186px] lg:pt-[250px] pb-[8px] gap-[64px] px-4 lg:px-[96px]"
+        className="w-full flex flex-col pt-[86px] lg:pt-[120px] pb-[8px] gap-[64px] px-4 xl:px-[80px] xxl:px-[96px] justify-center items-center"
       >
         <Box
           component="div"
-          className="w-full max-w-[1440px] flex flex-col gap-5"
+          className="w-full max-w-[1080px] flex flex-col gap-5"
         >
           <Typography
             variant="h4"
@@ -154,6 +157,11 @@ export default function AboutUsPage() {
             </Typography>
           </Box>
         </Box>
+        <Box className="w-full max-w-[1080px] flex-col md:flex-row flex justify-start items-start gap-4 md:gap-2">
+          <Button className="w-[111.64px] gap-0 rounded-[16.5px] normal-case bg-primary text-white font-medium font-helveticaMedium text-[15px]/[24px]">
+            Contact us
+          </Button>
+        </Box>
       </Box>
       {/* SECTION THREE */}
       <Box
@@ -161,14 +169,26 @@ export default function AboutUsPage() {
         id="our-market"
         className="w-full overflow-hidden skew-top"
       >
-        <div className="w-full flex flex-col justify-center items-center pt-[90px] md:pt-[196px] pb-[76px] lg:pb-[140px] gap-[64px] px-4 lg:px-[96px] origin-top-right -skew-y-6  bg-secondary relative">
+        <Box
+          className="w-full h-[1005.54px] flex flex-col justify-center items-center py-[90px]  gap-[64px] px-4 lg:px-[80px] 2xl:px-[96px] origin-top-right -skew-y-6  bg-secondary relative "
+          sx={{
+            backgroundColor: "#101828",
+            backgroundImage: {
+              xs: "transparent",
+              sm: `linear-gradient(0deg, rgba(0,0,0, 0.7), rgba(16,24,40, 1)),url("/images/factory-man.png")`,
+            },
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+          }}
+        >
           <Box
             component="div"
-            className="w-full max-w-[1440px] flex flex-col skew-y-6 gap-5 bg-secondary"
+            className="w-full max-w-[1440px] flex flex-col skew-y-6 gap-5 bg-transparent"
           >
             <Box
               component="div"
-              className="w-full flex flex-col lg:flex-row gap-5 bg-secondary"
+              className="w-full flex flex-col lg:flex-row gap-5 bg-transparent"
             >
               <Box component="div" className="w-full flex flex-col gap-5">
                 <Typography
@@ -284,7 +304,7 @@ export default function AboutUsPage() {
               </Box>
             </Box>
           </Box>
-        </div>
+        </Box>
       </Box>
     </Box>
   )

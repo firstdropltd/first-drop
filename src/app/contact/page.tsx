@@ -1,22 +1,11 @@
 "use client"
 import {
-  AngleForward,
   CallIcon,
   ChatIcon,
   LocationIcon,
   SupportIcon,
 } from "@/components/SVGs"
-import OurMarketTab from "@/views/AboutUs/outMarketTab"
-import ProductsSlides from "@/views/AboutUs/productswiper"
-import {
-  Box,
-  Button,
-  CssBaseline,
-  Divider,
-  Link,
-  Typography,
-} from "@mui/material"
-import Image from "next/image"
+import { Box, CssBaseline, Link, Typography } from "@mui/material"
 
 export default function ProductPage() {
   return (
@@ -25,9 +14,9 @@ export default function ProductPage() {
       <Box
         id="hero-section"
         component="div"
-        className="w-full h-[580px] xl:h-[914px] flex flex-col px-2 lg:px-4 py-4 md:py-[120px] relative bg-secondary mt-14 md:mt-1"
+        className="w-full h-[1400px] xl:h-[914px] flex flex-col px-1 lg:px-4 py-4 md:py-[120px] relative bg-secondary mt-14 md:mt-1"
       >
-        <Box className="w-full pt-10 lg:pt-20 flex flex-col justify-center items-center gap-6 xl:gap-20">
+        <Box className="w-full pt-10 lg:pt-20 flex flex-col justify-center items-center gap-8 xl:gap-20">
           <Box className="w-full flex flex-col justify-center items-center gap-2">
             <Typography
               variant="h4"
@@ -37,7 +26,7 @@ export default function ProductPage() {
             </Typography>
             <Typography
               variant="h1"
-              className="w-full flex justify-center items-center flex-col font-bold font-helveticaBold text-[28px]/[40px] md:text-[50px]/[60px] lg:text-[50px]/[65px] xxl:text-[65px]/[79px] text-white text-left tracking-[0.2px]"
+              className="w-full flex justify-center items-center flex-col font-bold font-helveticaBold text-[36px]/[40px] md:text-[50px]/[60px] lg:text-[50px]/[65px] xxl:text-[65px]/[79px] text-white text-center tracking-[0.2px]"
             >
               We&apos;d love to hear from you
               <Box
@@ -48,10 +37,10 @@ export default function ProductPage() {
               </Box>
             </Typography>
           </Box>
-          <Box className="w-full flex flex-col justify-center items-center lg:flex-row gap-4">
+          <Box className="w-full px-4  flex flex-col justify-center items-center lg:flex-row gap-4">
             <Box
               component="div"
-              className="w-full xl:w-[268px] h-[190px] xl:h-[290px] flex flex-col gap-16 bg-[#F9FAFB] p-6"
+              className="w-full xl:w-[268px] h-full xl:h-[290px] flex flex-col gap-16 bg-[#F9FAFB] p-6"
             >
               <SupportIcon />
               <Box className="w-full max-w-[238px] flex flex-col gap-[20px]">
@@ -79,7 +68,7 @@ export default function ProductPage() {
             </Box>
             <Box
               component="div"
-              className="w-full xl:w-[268px] h-[190px] xl:h-[290px] flex flex-col gap-16 bg-[#F9FAFB] p-6"
+              className="w-full xl:w-[268px] h-full xl:h-[290px] flex flex-col gap-16 bg-[#F9FAFB] p-6"
             >
               <ChatIcon />
               <Box className="w-full max-w-[238px] flex flex-col gap-[20px]">
@@ -107,10 +96,10 @@ export default function ProductPage() {
             </Box>
             <Box
               component="div"
-              className="w-full xl:w-[268px] h-[190px] xl:h-[290px] flex flex-col gap-16 bg-[#F9FAFB] p-6"
+              className="w-full xl:w-[268px] h-full xl:h-[290px] flex flex-col gap-16 bg-[#F9FAFB] p-6"
             >
               <LocationIcon />
-              <Box className="w-full max-w-[238px] flex flex-col gap-[20px]">
+              <Box className="w-full max-w-[238px] flex flex-col gap-[20px] justify-start items-start">
                 <Typography
                   variant="h2"
                   className="w-full text-dark font-helveticaBold font-bold text-[20px]/[30px] text-left flex flex-col gap-1"
@@ -134,10 +123,10 @@ export default function ProductPage() {
             </Box>
             <Box
               component="div"
-              className="w-full xl:w-[268px] h-[190px] xl:h-[290px] flex flex-col gap-16 bg-[#F9FAFB] p-6"
+              className="w-full xl:w-[268px] h-full xl:h-[290px] flex flex-col gap-16 bg-[#F9FAFB] p-6"
             >
               <CallIcon />
-              <Box className="w-full max-w-[238px] flex flex-col gap-[20px]">
+              <Box className="w-full lg:w-[238px] flex flex-col gap-[20px]">
                 <Typography
                   variant="h2"
                   className="w-full text-dark font-helveticaBold font-bold text-[20px]/[30px] text-left flex flex-col gap-1"
@@ -150,13 +139,22 @@ export default function ProductPage() {
                     Mon-Fri from 8am to 5pm.
                   </Box>
                 </Typography>
-
-                <Typography
-                  variant="caption"
-                  className="w-full text-primary font-helveticaBold font-bold text-[16px]/[24px] text-left flex flex-col gap-1"
-                >
-                  +234 816 526 3668 <span>+234 813 553 5616</span>
-                </Typography>
+                <Box className="w-full flex justify-between items-start">
+                  <Link
+                    href="tel: +234 8033497101"
+                    underline="hover"
+                    className="w-[180px] text-primary font-helveticaBold font-bold text-[16px]/[24px] text-left flex flex-col gap-1"
+                  >
+                    +234 8033497101
+                  </Link>
+                  <Link
+                    href="tel: +234 7038287302"
+                    underline="hover"
+                    className="w-[180px] text-primary font-helveticaBold font-bold text-[16px]/[24px] text-left flex flex-col gap-1"
+                  >
+                    +234 7038287302
+                  </Link>
+                </Box>
               </Box>
             </Box>
           </Box>

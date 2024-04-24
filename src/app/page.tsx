@@ -12,7 +12,7 @@ export default function HomePage() {
       <Box
         id="hero-section"
         component="div"
-        className="w-full h-[724px] md:h-[914px] flex flex-col px-4 lg:px-4 py-4 md:py-[100px] relative bg-secondary mt-14 md:mt-1"
+        className="w-full h-[824px] md:h-[900px] xl:h-[1000px] flex flex-col px-4 lg:px-4 py-4 md:py-[100px] relative bg-secondary mt-14 md:mt-1"
       >
         <Box className="w-full flex flex-col justify-start items-start lg:justify-center lg:items-center gap-6 px-2">
           <Box
@@ -44,13 +44,13 @@ export default function HomePage() {
           <Box className="w-full flex flex-col justify-center items-center gap-6">
             <Typography
               variant="h2"
-              className="w-full flex justify-center items-center flex-col gap-4 max-w-[861px] font-semibold font-interSemibold text-[36px]/[44px] md:text-[48px]/[50px] text-white text-left md:text-center tracking-[0.2px]"
+              className="w-full flex justify-center items-center flex-col gap-4 max-w-[861px] font-bold font-helveticaBold text-[36px]/[44px] md:text-[48px]/[50px] text-white text-center tracking-[0.20000000298023224px]"
             >
               From precision-crafted PET bottles to the purest, most refreshing
               water
               <Box
                 component="span"
-                className="w-full max-w-[608px] font-normal font-inter text-[18px]/[28px] text-[#C4C4C4] text-left lg:text-center"
+                className="w-full max-w-[608px] font-normal font-helvetica text-[18px]/[30px] text-[#C4C4C4] text-center"
               >
                 We&apos;ve been dedicated to excellence, evolving from bottle
                 manufacturing to the purest most refreshing water with a legacy
@@ -58,11 +58,11 @@ export default function HomePage() {
               </Box>
             </Typography>
             <Box className="w-full flex-col md:flex-row flex justify-center items-center gap-4 md:gap-2 my-4">
-              <Button className="w-full h-[48px] md:h-[33px] md:w-[111.64px] gap-0 rounded-[16.5px] normal-case bg-primary text-white font-medium font-helveticaMedium text-[15px]/[24px] px-[16px] py-[12px]">
+              <Button className="w-full h-[48px] md:h-[33px] md:w-[111.64px] gap-0 rounded-[16.5px] normal-case bg-primary text-white font-medium font-helveticaMedium text-[15px]/[24px] px-[16px] py-[12px] tracking-[0.20000000298023224px]">
                 Contact us
               </Button>
               <Button
-                className="w-full h-[48px] md:h-[33px] md:w-[151.64px] rounded-[16.5px] bg-white gap-0 normal-case md:bg-transparent text-[#344054] md:text-white font-medium font-helveticaMedium text-[15px]/[24px] tracking-[0.2px] px-[16px] py-[12px]"
+                className="w-full h-[48px] md:h-[33px] md:w-[151.64px] rounded-[16.5px] bg-white gap-0 normal-case md:bg-transparent text-[#344054] md:text-white font-medium font-helveticaMedium text-[14px]/[24px] tracking-[0.2px] px-[16px] py-[12px]"
                 endIcon={<AngleForward />}
               >
                 View products
@@ -82,22 +82,20 @@ export default function HomePage() {
           <Box
             sx={{
               position: "absolute",
-              top: { xs: 650, sm: 600, md: 560 },
+              top: { xs: 690, sm: 600, md: 560 },
               width: "100%",
               maxWidth: 1280,
               p: { xs: "0 16px 0 16px", sm: "0 96px 0 96px" },
               background: "transparent",
             }}
           >
-            <div className="relative w-[360px] h-[196px] lg:w-full lg:max-w-[1216px] lg:h-[480px] cursor-pointer">
-              <div className="aspect-w-16 aspect-h-9">
-                <iframe
-                  className="absolute inset-0 w-full h-full rounded-2xl border-none"
-                  src={`https://www.youtube.com/embed/erGnf7ws20E?autoplay=0&color=white&fs=0&rel=0`}
-                  title="Wall street sense"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                ></iframe>
-              </div>
+            <div className="relative  md:h-[0px] cursor-pointer pb-[58.51%] pt-[0px]">
+              <iframe
+                className="absolute inset-0 w-full h-[250px]  md:h-full rounded-2xl border-none m-0 md:p-0 aspect-video"
+                src={`https://www.youtube.com/embed/ZrYTLqVvlcc?autoplay=0&color=white&fs=0&rel=0`}
+                title="Wall street sense"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              ></iframe>
             </div>
           </Box>
         </Box>
@@ -106,7 +104,7 @@ export default function HomePage() {
       <Box
         component="section"
         id="our-market"
-        className="w-full flex flex-col pt-[186px] lg:pt-[250px] pb-[8px] gap-[64px] px-4 lg:px-[96px]"
+        className="w-full flex flex-col pt-[186px] lg:pt-[280px] xl:pt-[380px] pb-[8px] gap-[64px] px-4 lg:px-[75px] xxl:px-[120px]"
       >
         <Box
           component="div"
@@ -120,7 +118,7 @@ export default function HomePage() {
           </Typography>
           <Typography
             variant="h4"
-            className="w-full font-helveticaBold font-bold text-[30px] leading-[38px] md:text-[36px] md:leading-[44px] tracking-[0.20000000298023224px] text-left text-text-primary"
+            className="w-full max-w-[702px] font-helveticaBold font-bold text-[30px] leading-[38px] md:text-[36px] md:leading-[44px] tracking-[0.20000000298023224px] text-left text-text-primary"
           >
             Explore Our PET Bottle Range: Crafting Innovation and Sustainability
           </Typography>
@@ -141,7 +139,7 @@ export default function HomePage() {
         id="our-market"
         className="w-full overflow-hidden skew-top"
       >
-        <div className="w-full flex flex-col justify-center items-center pt-[90px] md:pt-[196px] pb-[76px] lg:pb-[140px] gap-[64px] px-4 lg:px-[96px] origin-top-right -skew-y-6  bg-secondary relative">
+        <div className="w-full flex flex-col justify-center items-center pt-[90px] md:pt-[196px] pb-[76px] lg:pb-[140px] gap-[64px] px-4 md:px-[80px] xxl:px-[96px] origin-top-right -skew-y-6  bg-secondary relative">
           <Box
             component="div"
             className="w-full max-w-[1440px] flex flex-col skew-y-6 gap-5 bg-secondary px-2"
@@ -159,7 +157,7 @@ export default function HomePage() {
                 </Typography>
                 <Typography
                   variant="h4"
-                  className="w-full max-w-[461.53px] font-interSemibold font-semibold text-[36px] leading-[44px] tracking-[0.20000000298023224px] text-left text-white"
+                  className="w-full max-w-[680px] font-interSemibold font-semibold text-[36px] leading-[44px] tracking-[0.20000000298023224px] text-left text-white"
                 >
                   There&apos;s a portable size product for every moment in your
                   day.
@@ -180,7 +178,7 @@ export default function HomePage() {
                 </Button>
               </Box>
               <Image
-                className="w-full h-full hidden lg:flex sm:w-[280px] sm:h-[280px] lg:w-[480px] lg:h-[380px] xxl:w-[540px] xxl:h-[345px] rounded-lg"
+                className="w-full h-full hidden lg:flex sm:w-[280px] sm:h-[280px] lg:w-[400px] lg:h-[320px] xl:w-[500px] xl:h-[345px] xxl:w-[540px] xxl:h-[345px] rounded-lg"
                 src="/images/pouring-water.jpeg"
                 width={280}
                 height={280}
@@ -198,7 +196,6 @@ export default function HomePage() {
               </Box>
             </Box>
             <Divider className="border-border mt-8 md:hidden" />
-
             <Box
               component="div"
               className="w-full max-w-[768px] mt-8 flex flex-col gap-5"
@@ -211,7 +208,7 @@ export default function HomePage() {
               </Typography>
               <Typography
                 variant="h4"
-                className="w-full max-w-[432.68px] font-inter font-normal lg:font-helveticaLight lg:font-light text-[18px] leading-[28px] tracking-[0.20000000298023224px] text-left text-white"
+                className="w-full max-w-[482.68px] font-inter font-normal lg:font-helveticaLight lg:font-light text-[18px] leading-[28px] tracking-[0.20000000298023224px] text-left text-white"
               >
                 Curious to see where the magic happens? Schedule an appointment
                 to tour our state-of-the-art factory and witness firsthand the
