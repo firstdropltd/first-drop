@@ -179,7 +179,7 @@ export default function OurMarketTab() {
           <Box className="w-full flex xl:justify-end xl:items-end">
             <Image
               src="/images/pink-bottle.jpeg"
-              className="w-[343px] sm:w-[full] h-[296px] lg:w-[468px] lg:h-[640px] xl:w-[576px] xl:h-[640px] xxl-h-[640px] rounded-[10px]"
+              className="w-[343px] sm:w-[full] h-[340px] lg:w-[468px] lg:h-[640px] xl:w-[576px] xl:h-[640px] xxl-h-[640px] rounded-[10px]"
               width={576}
               height={640}
               alt="plastic bottle"
@@ -190,7 +190,7 @@ export default function OurMarketTab() {
           <Box className="w-full flex xl:justify-end xl:items-end">
             <Image
               src="/images/blue-bottle-water.jpeg"
-              className="w-[343px] sm:w-[full] h-[296px] lg:w-[468px] lg:h-[640px] xl:w-[576px] xl:h-[640px] xxl-h-[640px] rounded-[10px]"
+              className="w-[343px] sm:w-[full] h-[340px] lg:w-[468px] lg:h-[640px] xl:w-[576px] xl:h-[640px] xxl-h-[640px] rounded-[10px]"
               width={576}
               height={640}
               alt="plastic bottle"
@@ -201,7 +201,7 @@ export default function OurMarketTab() {
           <Box className="w-full flex xl:justify-end xl:items-end">
             <Image
               src="/images/green-spray-bottle.jpeg"
-              className="w-[343px] sm:w-[full] h-[296px] lg:w-[468px] lg:h-[640px] xl:w-[576px] xl:h-[640px] xxl-h-[640px] rounded-[10px]"
+              className="w-[343px] sm:w-[full] h-[340px] lg:w-[468px] lg:h-[640px] xl:w-[576px] xl:h-[640px] xxl-h-[640px] rounded-[10px]"
               width={576}
               height={640}
               alt="plastic bottle"

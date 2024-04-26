@@ -44,7 +44,7 @@ export default function HomePage() {
           <Box className="w-full flex flex-col justify-center items-center gap-6">
             <Typography
               variant="h2"
-              className="w-full flex justify-center items-center flex-col gap-4 max-w-[861px] font-bold font-helveticaBold text-[36px]/[44px] md:text-[48px]/[50px] text-white text-center tracking-[0.20000000298023224px]"
+              className="w-full flex justify-center items-center flex-col gap-4 max-w-[861px] font-bold font-helveticaBold text-[34px]/[44px] md:text-[48px]/[50px] text-white text-center tracking-[0.20000000298023224px]"
             >
               From precision-crafted PET bottles to the purest, most refreshing
               water
@@ -57,7 +57,7 @@ export default function HomePage() {
                 of nearly a decade
               </Box>
             </Typography>
-            <Box className="w-full flex-col md:flex-row flex justify-center items-center gap-4 md:gap-2 my-4">
+            <Box className="w-full flex-col md:flex-row flex justify-center items-center gap-6 md:gap-2 my-4">
               <Button className="w-full h-[48px] md:h-[33px] md:w-[111.64px] gap-0 rounded-[16.5px] normal-case bg-primary text-white font-medium font-helveticaMedium text-[15px]/[24px] px-[16px] py-[12px] tracking-[0.20000000298023224px]">
                 Contact us
               </Button>

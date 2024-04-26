@@ -25,24 +25,24 @@ export default function AboutUsPage() {
           <Box className="w-full flex flex-1 flex-col justify-center items-center gap-6">
             <Typography
               variant="h1"
-              className="w-full max-w-[677px] flex justify-center items-center flex-col gap-4 font-medium font-helveticaMedium text-[28px] leading-[38px] md:text-[45px]/[55px] lg:text-[48px]/[60px] xxl:text-[60px]/[57px] text-white text-center sm:tracking-[-3.76px]"
+              className="w-full max-w-[582px] flex justify-center items-center flex-col gap-4 font-medium font-helveticaMedium text-[28px] leading-[38px] md:text-[45px]/[55px] lg:text-[48px]/[57px] xl:text-[60px]/[57px] text-white text-center sm:tracking-[-3.76px]"
             >
               First Drop aim to be the best in the market.
-              <Box
-                component="span"
-                className="w-full max-w-[712px] font-normal font-helvetica text-[18px]/[28px] text-[#C4C4C4] text-center tracking-[0.2px]"
-              >
-                Our products are produced in conformity with the Standard
-                Organization of Nigeria (SON), and we are fully registered with
-                National Agency for Food and Drug Administration and Control
-                (NAFDAC RC. 1096978).
-              </Box>
-              <Box className="w-full flex-col md:flex-row flex justify-center items-center gap-4 md:gap-2 my-4">
-                <Button className="w-[111.64px] gap-0 rounded-[16.5px] normal-case bg-primary text-white font-medium font-helveticaMedium text-[15px]/[24px]">
-                  Contact us
-                </Button>
-              </Box>
             </Typography>
+            <Box
+              component="span"
+              className="w-full max-w-[712px] font-normal font-helvetica text-[18px]/[28px] text-[#C4C4C4] text-center tracking-[0.2px]"
+            >
+              Our products are produced in conformity with the Standard
+              Organization of Nigeria (SON), and we are fully registered with
+              National Agency for Food and Drug Administration and Control
+              (NAFDAC RC. 1096978).
+            </Box>
+            <Box className="w-full flex-col md:flex-row flex justify-center items-center gap-4 md:gap-2 my-4">
+              <Button className="w-[111.64px] gap-0 rounded-[16.5px] normal-case bg-primary text-white font-medium font-helveticaMedium text-[15px]/[24px]">
+                Contact us
+              </Button>
+            </Box>
           </Box>
         </Box>
       </Box>
@@ -157,7 +157,7 @@ export default function AboutUsPage() {
             </Typography>
           </Box>
         </Box>
-        <Box className="w-full max-w-[1080px] flex-col md:flex-row flex justify-start items-start gap-4 md:gap-2">
+        <Box className="w-full max-w-[1080px] flex-col md:flex-row flex justify-start items-start gap-4 md:gap-2 mt-[-40px]">
           <Button className="w-[111.64px] gap-0 rounded-[16.5px] normal-case bg-primary text-white font-medium font-helveticaMedium text-[15px]/[24px]">
             Contact us
           </Button>
