@@ -2,9 +2,11 @@
 import { SearchIcon } from "@/components/SVGs"
 import { Colors } from "@/components/Theme/colors"
 import { Fonts } from "@/components/Theme/font"
+import { products } from "@/components/lib"
 import ArrowBackIcon from "@mui/icons-material/ArrowBack"
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward"
 import {
+  Button,
   Divider,
   Grid,
   Pagination,
@@ -21,92 +23,6 @@ import Image from "next/image"
 import { useRouter } from "next/navigation"
 import * as React from "react"
 
-const products = [
-  {
-    description: `1 Oz Brown Glass Boston Round 
-Bottle With 20-400 Neck Finish`,
-    src: "/images/orange-pink-jar.jpeg",
-    name: "orange-pink jars",
-    type: "plastic bottle",
-  },
-  {
-    description: `1 Oz Brown Glass Boston Round 
-Bottle With 20-400 Neck Finish`,
-    src: "/images/white-plastic-botttle.jpeg",
-    name: "white bottle",
-    type: "plastic bottle",
-  },
-  {
-    description: `1 Oz Brown Glass Boston Round 
-Bottle With 20-400 Neck Finish`,
-    src: "/images/linzhome-bottle.jpeg",
-    name: "water-bottle",
-    type: "water bottle",
-  },
-  {
-    description: `1 Oz Brown Glass Boston Round 
-Bottle With 20-400 Neck Finish`,
-    src: "/images/yellow-red-bottles.jpeg",
-    name: "orange-pink jars",
-    type: "plastic cups",
-  },
-  {
-    description: `1 Oz Brown Glass Boston Round 
-Bottle With 20-400 Neck Finish`,
-    src: "/images/purple-bottle.jpeg",
-    name: "purple bottle jars",
-    type: "plastic cups",
-  },
-  {
-    description: `1 Oz Brown Glass Boston Round 
-Bottle With 20-400 Neck Finish`,
-    src: "/images/white-square-bottles.jpeg",
-    name: "square bottles",
-    type: "plastic tube",
-  },
-  {
-    description: `1 Oz Brown Glass Boston Round 
-Bottle With 20-400 Neck Finish`,
-    src: "/images/red-capped-sample-bottle.jpeg",
-    name: "sample bottles",
-    type: "plastic tube",
-  },
-  {
-    description: `1 Oz Brown Glass Boston Round 
-Bottle With 20-400 Neck Finish`,
-    src: "/images/pink-strawed-cup.jpeg",
-    name: "pink bottle with straw",
-    type: "plastic cup",
-  },
-  {
-    description: `1 Oz Brown Glass Boston Round 
-Bottle With 20-400 Neck Finish`,
-    src: "/images/pink-lined-jar.jpeg",
-    name: "pink jars",
-    type: "plastic cup",
-  },
-  {
-    description: `1 Oz Brown Glass Boston Round 
-Bottle With 20-400 Neck Finish`,
-    src: "/images/three-blue-ash-purple.jpeg",
-    name: "pink jars",
-    type: "plastic cup",
-  },
-  {
-    description: `1 Oz Brown Glass Boston Round 
-Bottle With 20-400 Neck Finish`,
-    src: "/images/trianglewhite-triangle-lid-jar.jpeg",
-    name: "pink jars",
-    type: "plastic cup",
-  },
-  {
-    description: `1 Oz Brown Glass Boston Round 
-Bottle With 20-400 Neck Finish`,
-    src: "/images/green-spray-bottle.jpeg",
-    name: "pink jars",
-    type: "pet bottle",
-  },
-]
 interface TabPanelProps {
   children?: React.ReactNode
   index: number
@@ -207,6 +123,7 @@ function a11yProps(index: number) {
 
 export default function OurProductsTab() {
   const router = useRouter()
+  const [data, setData] = React.useState(products)
   const [value, setValue] = React.useState(0)
   const [type, setType] = React.useState("all")
   const [search, setSearch] = React.useState("")
@@ -223,48 +140,89 @@ export default function OurProductsTab() {
 
   const handleChange = (_: any, newValue: number) => {
     setValue(newValue)
-    console.log("newValue", newValue)
 
     const bottleType =
       newValue === 0
         ? "all"
         : newValue === 1
-        ? "plastic bottle"
+        ? "wrap"
         : newValue === 2
-        ? "water bottle"
+        ? "nylon"
         : newValue === 3
-        ? "pet bottle"
+        ? "water"
         : newValue === 4
-        ? "plastic tube"
+        ? "plastic"
         : newValue === 5
-        ? "plastic box"
+        ? "dispenser"
         : newValue === 6
-        ? "plastic cups"
+        ? "pure-water"
         : newValue === 7
+        ? "preforms"
+        : newValue === 8
+        ? "pet"
+        : newValue === 9
         ? "request"
         : "all"
 
     setType(bottleType)
   }
-  const handleSearchChange = (event: any) => {
-    setSearch(event.target.value)
+  const handleSearchChange = ({ target }: any) => {
+    const { value } = target
+    setSearch(value)
+
+    if (value.length >= 3) {
+      if (search !== "") {
+        const filteredData = data?.filter((item) => {
+          return Object.values(item)
+            .join("")
+            .toLowerCase()
+            .includes(search.toLowerCase())
+        })
+        setData(filteredData)
+      } else {
+        setData(data)
+      }
+    }
+  }
+  const handleKeyUp = ({ target, keyCode }: any) => {
+    const { value } = target
+    setSearch(value)
+    if (keyCode === 13) {
+      if (search !== "") {
+        const filteredData = data?.filter((item) => {
+          return Object.values(item)
+            .join("")
+            .toLowerCase()
+            .includes(search.toLowerCase())
+        })
+        setData(filteredData)
+      } else {
+        setData(data)
+      }
+    }
+    if (keyCode === 8) {
+      setSearch("")
+      setData(products)
+    }
   }
   const currentPageData =
     type === "all" && value === 0
-      ? products?.slice(startIndex, endIndex)
-      : products
-          ?.filter((item) => item.type === type)
-          ?.slice(startIndex, endIndex)
+      ? data?.slice(startIndex, endIndex)
+      : data?.filter((item) => item.type === type)?.slice(startIndex, endIndex)
 
   return (
-    <Box className="w-full max-w-[1440px] h-full flex flex-col lg:flex-row gap-[32px] xl:gap-[67px]">
+    <Box
+      className="w-full max-w-[1440px] h-full flex flex-col lg:flex-row gap-[32px] xl:gap-[67px]"
+      data-aos="fade-up"
+    >
       {matches ? (
-        <Box className="w-full sm:w-[280px] flex flex-col gap-[24px]">
+        <Box className="w-full sm:w-[380px] flex flex-col gap-[24px]">
           <Box className="w-full relative px-[14px] py-[10px]">
             <input
               placeholder="Search for products"
               value={search}
               onChange={handleSearchChange}
+              onKeyUp={handleKeyUp}
               className="w-full h-[44px] outline-none py-[10px] px-[14px] flex gap-2 rounded-lg border border-solid border-[#D0D5DD] focus:border-primary pl-10 font-inter font-normal text-sm leading-6 text-left text-text-primary placeholder:text-[#667085]"
               style={{
                 boxShadow: "0px 1px 2px 0px #1018280D",
@@ -284,15 +242,17 @@ export default function OurProductsTab() {
             onChange={handleChange}
           >
             <StyledTab label="All" {...a11yProps(0)} />
-            <StyledTab label="Plastic Bottle" {...a11yProps(1)} />
-            <StyledTab label="Water" {...a11yProps(2)} />
-            <StyledTab label="PET Perform" {...a11yProps(3)} />
-            <StyledTab label="Plastic Tubes" {...a11yProps(4)} />
-            <StyledTab label="Plastic Boxes" {...a11yProps(5)} />
-            <StyledTab label="Plastic Cups" {...a11yProps(6)} />
+            <StyledTab label="Shrink wrap" {...a11yProps(1)} />
+            <StyledTab label="Pure water nylon" {...a11yProps(2)} />
+            <StyledTab label="Water" {...a11yProps(3)} />
+            <StyledTab label="Plastics" {...a11yProps(4)} />
+            <StyledTab label="Dispenser" {...a11yProps(5)} />
+            <StyledTab label="Pure water" {...a11yProps(6)} />
+            <StyledTab label="Preforms" {...a11yProps(7)} />
+            <StyledTab label="PET bottle" {...a11yProps(8)} />
             <StyledTab
               label="Request Model"
-              {...a11yProps(7)}
+              {...a11yProps(9)}
               onClick={() => router.push("/contact")}
             />
           </StyledTabs>
@@ -308,13 +268,19 @@ export default function OurProductsTab() {
             onChange={handleChange}
           >
             <SmallStyledTab label="All" {...a11yProps(0)} />
-            <SmallStyledTab label="Plastic Bottle" {...a11yProps(1)} />
-            <SmallStyledTab label="Water" {...a11yProps(2)} />
-            <SmallStyledTab label="PET Perform" {...a11yProps(3)} />
-            <SmallStyledTab label="Plastic Tubes" {...a11yProps(4)} />
-            <SmallStyledTab label="Plastic Boxes" {...a11yProps(5)} />
-            <SmallStyledTab label="Plastic Cups" {...a11yProps(6)} />
-            <SmallStyledTab label="Request Model" {...a11yProps(7)} />
+            <SmallStyledTab label="Shrink wrap" {...a11yProps(1)} />
+            <SmallStyledTab label="Pure water nylon" {...a11yProps(2)} />
+            <SmallStyledTab label="Water" {...a11yProps(3)} />
+            <SmallStyledTab label="Plastics" {...a11yProps(4)} />
+            <SmallStyledTab label="Dispenser" {...a11yProps(5)} />
+            <SmallStyledTab label="Pure water" {...a11yProps(6)} />
+            <SmallStyledTab label="Preforms" {...a11yProps(7)} />
+            <SmallStyledTab label="PET bottle" {...a11yProps(8)} />
+            <SmallStyledTab
+              label="Request Model"
+              {...a11yProps(9)}
+              onClick={() => router.push("/contact")}
+            />
           </SmallStyledTabs>
           <Box className="w-full relative px-[14px] py-[10px]">
             <input
@@ -337,7 +303,7 @@ export default function OurProductsTab() {
           <Grid container spacing={6}>
             {currentPageData.length === 0 ? (
               <Box className="w-full mt-[120px] flex justify-center items-center font-interMedium font-medium text-2xl leading-[18px] text-[#344054] text-center cursor-pointer">
-                No bottle available
+                No bottles available
               </Box>
             ) : (
               currentPageData?.map((product, i) => {
@@ -347,35 +313,26 @@ export default function OurProductsTab() {
                     xs={12}
                     sm={6}
                     lg={4}
+                    xl={3}
                     key={`product - ${i}`}
-                    className="w-full flex flex-col gap-2 mx-4 sm:mx-0"
+                    className="w-full flex flex-col gap-2 mx-4 sm:mx-0 cursor-pointer"
+                    onClick={() => router.push("/contact")}
                   >
                     <Image
                       src={product.src}
-                      className="w-auto sm:w-auto h-auto sm:h-auto rounded-[10px] aspect-square"
+                      className="w-auto sm:w-auto h-auto sm:h-auto rounded-[10px] aspect-square hover:scale-[1.02]"
                       width={261}
                       height={241}
                       alt={product.name}
                     />
-                    <Box
-                      className="w-[255px] py-[4px] pr-[10px] pl-[4px] flex justify-between items-center gap-[6px] border border-solid rounded-[10px] border-[#D0D5DD]"
-                      sx={{ boxShadow: "0px 1px 2px 0px #1018280D" }}
-                    >
-                      <Box className="w-[106px] md:w-[106px] px-[6px] py-[2px] flex justify-start items-center border border-solid rounded-[6px] border-primary gap-[6px] bg-primary">
-                        <Typography
-                          variant="caption"
-                          className="font-interMedium font-medium text-xs leading-[18px] text-white text-center cursor-pointer"
-                          onClick={() => router.push("/contact")}
-                        >
-                          Get best price
-                        </Typography>
-                      </Box>
-                      <Typography
-                        variant="caption"
-                        className="font-interMedium font-medium text-[12px]/[18px] text-[#344054] text-center"
+
+                    <Box className="w-[120px] px-[6px] py-[2px] flex justify-start items-center border border-solid rounded-[6px] border-primary gap-[6px] bg-primary mt-2">
+                      <Button
+                        className="font-interMedium font-medium text-xs leading-[18px] text-white text-center cursor-pointer normal-case shadow-[0px_1px_2px_0px_#1018280D]"
+                        onClick={() => router.push("/contact")}
                       >
-                        MOQ: 10000 pcs
-                      </Typography>
+                        Get best price
+                      </Button>
                     </Box>
                     <Typography className="font-inter font-normal text-[16px]/[24px] text-[#475467] text-left">
                       {product.description}
@@ -391,7 +348,7 @@ export default function OurProductsTab() {
               <Box className="w-full flex justify-center items-center">
                 <Pagination
                   className="font-interMedium font-medium text-center text-sm text-[#475467]"
-                  count={Math.ceil(products.length / pageSize)}
+                  count={Math.ceil(data.length / pageSize)}
                   page={page}
                   boundaryCount={3}
                   siblingCount={0}
@@ -415,7 +372,7 @@ export default function OurProductsTab() {
           <Grid container spacing={6}>
             {currentPageData.length === 0 ? (
               <Box className="w-full mt-[120px] flex justify-center items-center font-interMedium font-medium text-2xl leading-[18px] text-[#344054] text-center cursor-pointer">
-                No bottle available
+                No shrink wrap bottle available
               </Box>
             ) : (
               currentPageData?.map((product, i) => {
@@ -425,34 +382,25 @@ export default function OurProductsTab() {
                     xs={12}
                     sm={6}
                     lg={4}
+                    xl={3}
                     key={`product - ${i}`}
-                    className="w-full flex flex-col gap-2"
+                    className="w-full flex flex-col gap-2 mx-4 sm:mx-0 cursor-pointer"
+                    onClick={() => router.push("/contact")}
                   >
                     <Image
                       src={product.src}
-                      className="w-[343px] sm:w-auto h-full sm:h-auto rounded-[10px] aspect-square"
+                      className="w-auto sm:w-auto h-auto sm:h-auto rounded-[10px] aspect-square hover:scale-[1.02]"
                       width={261}
                       height={241}
                       alt={product.name}
                     />
-                    <Box
-                      className="w-[255px] py-[4px] pr-[10px] pl-[4px] flex justify-between items-center gap-[6px] border border-solid rounded-[10px] border-[#D0D5DD]"
-                      sx={{ boxShadow: "0px 1px 2px 0px #1018280D" }}
-                    >
-                      <Box className="w-[106px] md:w-[106px] px-[6px] py-[2px] flex justify-start items-center border border-solid rounded-[6px] border-primary gap-[6px] bg-primary">
-                        <Typography
-                          variant="caption"
-                          className="font-interMedium font-medium text-xs leading-[18px] text-white text-center"
-                        >
-                          Get best price
-                        </Typography>
-                      </Box>
-                      <Typography
-                        variant="caption"
-                        className="font-interMedium font-medium text-[12px]/[18px] text-[#344054] text-center"
+                    <Box className="w-[120px] px-[6px] py-[2px] flex justify-start items-center border border-solid rounded-[6px] border-primary gap-[6px] bg-primary mt-2">
+                      <Button
+                        className="font-interMedium font-medium text-xs leading-[18px] text-white text-center cursor-pointer normal-case shadow-[0px_1px_2px_0px_#1018280D]"
+                        onClick={() => router.push("/contact")}
                       >
-                        MOQ: 10000 pcs
-                      </Typography>
+                        Get best price
+                      </Button>
                     </Box>
                     <Typography className="font-inter font-normal text-[16px]/[24px] text-[#475467] text-left">
                       {product.description}
@@ -465,7 +413,7 @@ export default function OurProductsTab() {
               <Box className="w-full flex justify-center items-center">
                 <Pagination
                   className="font-interMedium font-medium text-center text-sm text-[#475467]"
-                  count={Math.ceil(products.length / pageSize)}
+                  count={Math.ceil(data.length / pageSize)}
                   page={page}
                   boundaryCount={3}
                   siblingCount={0}
@@ -489,7 +437,7 @@ export default function OurProductsTab() {
           <Grid container spacing={6}>
             {currentPageData.length === 0 ? (
               <Box className="w-full mt-[120px] flex justify-center items-center font-interMedium font-medium text-2xl leading-[18px] text-[#344054] text-center cursor-pointer">
-                No bottle available
+                No pure water nylon available
               </Box>
             ) : (
               currentPageData?.map((product, i) => {
@@ -499,34 +447,25 @@ export default function OurProductsTab() {
                     xs={12}
                     sm={6}
                     lg={4}
+                    xl={3}
                     key={`product - ${i}`}
-                    className="w-full flex flex-col gap-2"
+                    className="w-full flex flex-col gap-2 mx-4 sm:mx-0 cursor-pointer"
+                    onClick={() => router.push("/contact")}
                   >
                     <Image
                       src={product.src}
-                      className="w-[343px] sm:w-auto h-full sm:h-auto rounded-[10px] aspect-square"
+                      className="w-auto sm:w-auto h-auto sm:h-auto rounded-[10px] aspect-square hover:scale-[1.02]"
                       width={261}
                       height={241}
                       alt={product.name}
                     />
-                    <Box
-                      className="w-[255px] py-[4px] pr-[10px] pl-[4px] flex justify-between items-center gap-[6px] border border-solid rounded-[10px] border-[#D0D5DD]"
-                      sx={{ boxShadow: "0px 1px 2px 0px #1018280D" }}
-                    >
-                      <Box className="w-[106px] md:w-[106px] px-[6px] py-[2px] flex justify-start items-center border border-solid rounded-[6px] border-primary gap-[6px] bg-primary">
-                        <Typography
-                          variant="caption"
-                          className="font-interMedium font-medium text-xs leading-[18px] text-white text-center"
-                        >
-                          Get best price
-                        </Typography>
-                      </Box>
-                      <Typography
-                        variant="caption"
-                        className="font-interMedium font-medium text-[12px]/[18px] text-[#344054] text-center"
+                    <Box className="w-[120px] px-[6px] py-[2px] flex justify-start items-center border border-solid rounded-[6px] border-primary gap-[6px] bg-primary mt-2">
+                      <Button
+                        className="font-interMedium font-medium text-xs leading-[18px] text-white text-center cursor-pointer normal-case shadow-[0px_1px_2px_0px_#1018280D]"
+                        onClick={() => router.push("/contact")}
                       >
-                        MOQ: 10000 pcs
-                      </Typography>
+                        Get best price
+                      </Button>
                     </Box>
                     <Typography className="font-inter font-normal text-[16px]/[24px] text-[#475467] text-left">
                       {product.description}
@@ -539,7 +478,7 @@ export default function OurProductsTab() {
               <Box className="w-full flex justify-center items-center">
                 <Pagination
                   className="font-interMedium font-medium text-center text-sm text-[#475467]"
-                  count={Math.ceil(products.length / pageSize)}
+                  count={Math.ceil(data.length / pageSize)}
                   page={page}
                   boundaryCount={3}
                   siblingCount={0}
@@ -563,7 +502,7 @@ export default function OurProductsTab() {
           <Grid container spacing={6}>
             {currentPageData.length === 0 ? (
               <Box className="w-full mt-[120px] flex justify-center items-center font-interMedium font-medium text-2xl leading-[18px] text-[#344054] text-center cursor-pointer">
-                No bottle available
+                No bottle water available
               </Box>
             ) : (
               currentPageData?.map((product, i) => {
@@ -573,34 +512,25 @@ export default function OurProductsTab() {
                     xs={12}
                     sm={6}
                     lg={4}
+                    xl={3}
                     key={`product - ${i}`}
-                    className="w-full flex flex-col gap-2"
+                    className="w-full flex flex-col gap-2 mx-4 sm:mx-0 cursor-pointer"
+                    onClick={() => router.push("/contact")}
                   >
                     <Image
                       src={product.src}
-                      className="w-[343px] sm:w-auto h-full sm:h-auto rounded-[10px] aspect-square"
+                      className="w-auto sm:w-auto h-auto sm:h-auto rounded-[10px] aspect-square hover:scale-[1.02]"
                       width={261}
                       height={241}
                       alt={product.name}
                     />
-                    <Box
-                      className="w-[255px] py-[4px] pr-[10px] pl-[4px] flex justify-between items-center gap-[6px] border border-solid rounded-[10px] border-[#D0D5DD]"
-                      sx={{ boxShadow: "0px 1px 2px 0px #1018280D" }}
-                    >
-                      <Box className="w-[106px] md:w-[106px] px-[6px] py-[2px] flex justify-start items-center border border-solid rounded-[6px] border-primary gap-[6px] bg-primary">
-                        <Typography
-                          variant="caption"
-                          className="font-interMedium font-medium text-xs leading-[18px] text-white text-center"
-                        >
-                          Get best price
-                        </Typography>
-                      </Box>
-                      <Typography
-                        variant="caption"
-                        className="font-interMedium font-medium text-[12px]/[18px] text-[#344054] text-center"
+                    <Box className="w-[120px] px-[6px] py-[2px] flex justify-start items-center border border-solid rounded-[6px] border-primary gap-[6px] bg-primary mt-2">
+                      <Button
+                        className="font-interMedium font-medium text-xs leading-[18px] text-white text-center cursor-pointer normal-case shadow-[0px_1px_2px_0px_#1018280D]"
+                        onClick={() => router.push("/contact")}
                       >
-                        MOQ: 10000 pcs
-                      </Typography>
+                        Get best price
+                      </Button>
                     </Box>
                     <Typography className="font-inter font-normal text-[16px]/[24px] text-[#475467] text-left">
                       {product.description}
@@ -613,7 +543,7 @@ export default function OurProductsTab() {
               <Box className="w-full flex justify-center items-center">
                 <Pagination
                   className="font-interMedium font-medium text-center text-sm text-[#475467]"
-                  count={Math.ceil(products.length / pageSize)}
+                  count={Math.ceil(data.length / pageSize)}
                   page={page}
                   boundaryCount={3}
                   siblingCount={0}
@@ -637,7 +567,7 @@ export default function OurProductsTab() {
           <Grid container spacing={6}>
             {currentPageData.length === 0 ? (
               <Box className="w-full mt-[120px] flex justify-center items-center font-interMedium font-medium text-2xl leading-[18px] text-[#344054] text-center cursor-pointer">
-                No bottle available
+                No plastic bottles available
               </Box>
             ) : (
               currentPageData?.map((product, i) => {
@@ -647,34 +577,25 @@ export default function OurProductsTab() {
                     xs={12}
                     sm={6}
                     lg={4}
+                    xl={3}
                     key={`product - ${i}`}
-                    className="w-full flex flex-col gap-2"
+                    className="w-full flex flex-col gap-2 mx-4 sm:mx-0 cursor-pointer"
+                    onClick={() => router.push("/contact")}
                   >
                     <Image
                       src={product.src}
-                      className="w-[343px] sm:w-auto h-full sm:h-auto rounded-[10px] aspect-square"
+                      className="w-auto sm:w-auto h-auto sm:h-auto rounded-[10px] aspect-square hover:scale-[1.02]"
                       width={261}
                       height={241}
                       alt={product.name}
                     />
-                    <Box
-                      className="w-[255px] py-[4px] pr-[10px] pl-[4px] flex justify-between items-center gap-[6px] border border-solid rounded-[10px] border-[#D0D5DD]"
-                      sx={{ boxShadow: "0px 1px 2px 0px #1018280D" }}
-                    >
-                      <Box className="w-[106px] md:w-[106px] px-[6px] py-[2px] flex justify-start items-center border border-solid rounded-[6px] border-primary gap-[6px] bg-primary">
-                        <Typography
-                          variant="caption"
-                          className="font-interMedium font-medium text-xs leading-[18px] text-white text-center"
-                        >
-                          Get best price
-                        </Typography>
-                      </Box>
-                      <Typography
-                        variant="caption"
-                        className="font-interMedium font-medium text-[12px]/[18px] text-[#344054] text-center"
+                    <Box className="w-[120px] px-[6px] py-[2px] flex justify-start items-center border border-solid rounded-[6px] border-primary gap-[6px] bg-primary mt-2">
+                      <Button
+                        className="font-interMedium font-medium text-xs leading-[18px] text-white text-center cursor-pointer normal-case shadow-[0px_1px_2px_0px_#1018280D]"
+                        onClick={() => router.push("/contact")}
                       >
-                        MOQ: 10000 pcs
-                      </Typography>
+                        Get best price
+                      </Button>
                     </Box>
                     <Typography className="font-inter font-normal text-[16px]/[24px] text-[#475467] text-left">
                       {product.description}
@@ -687,7 +608,7 @@ export default function OurProductsTab() {
               <Box className="w-full flex justify-center items-center">
                 <Pagination
                   className="font-interMedium font-medium text-center text-sm text-[#475467]"
-                  count={Math.ceil(products.length / pageSize)}
+                  count={Math.ceil(data.length / pageSize)}
                   page={page}
                   boundaryCount={3}
                   siblingCount={0}
@@ -711,7 +632,7 @@ export default function OurProductsTab() {
           <Grid container spacing={6}>
             {currentPageData.length === 0 ? (
               <Box className="w-full mt-[120px] flex justify-center items-center font-interMedium font-medium text-2xl leading-[18px] text-[#344054] text-center cursor-pointer">
-                No bottle available
+                No dispenser bottle available
               </Box>
             ) : (
               currentPageData?.map((product, i) => {
@@ -721,34 +642,25 @@ export default function OurProductsTab() {
                     xs={12}
                     sm={6}
                     lg={4}
+                    xl={3}
                     key={`product - ${i}`}
-                    className="w-full flex flex-col gap-2"
+                    className="w-full flex flex-col gap-2 mx-4 sm:mx-0 cursor-pointer"
+                    onClick={() => router.push("/contact")}
                   >
                     <Image
                       src={product.src}
-                      className="w-[343px] sm:w-auto h-full sm:h-auto rounded-[10px] aspect-square"
+                      className="w-auto sm:w-auto h-auto sm:h-auto rounded-[10px] aspect-square hover:scale-[1.02]"
                       width={261}
                       height={241}
                       alt={product.name}
                     />
-                    <Box
-                      className="w-[255px] py-[4px] pr-[10px] pl-[4px] flex justify-between items-center gap-[6px] border border-solid rounded-[10px] border-[#D0D5DD]"
-                      sx={{ boxShadow: "0px 1px 2px 0px #1018280D" }}
-                    >
-                      <Box className="w-[106px] md:w-[106px] px-[6px] py-[2px] flex justify-start items-center border border-solid rounded-[6px] border-primary gap-[6px] bg-primary">
-                        <Typography
-                          variant="caption"
-                          className="font-interMedium font-medium text-xs leading-[18px] text-white text-center"
-                        >
-                          Get best price
-                        </Typography>
-                      </Box>
-                      <Typography
-                        variant="caption"
-                        className="font-interMedium font-medium text-[12px]/[18px] text-[#344054] text-center"
+                    <Box className="w-[120px] px-[6px] py-[2px] flex justify-start items-center border border-solid rounded-[6px] border-primary gap-[6px] bg-primary mt-2">
+                      <Button
+                        className="font-interMedium font-medium text-xs leading-[18px] text-white text-center cursor-pointer normal-case shadow-[0px_1px_2px_0px_#1018280D]"
+                        onClick={() => router.push("/contact")}
                       >
-                        MOQ: 10000 pcs
-                      </Typography>
+                        Get best price
+                      </Button>
                     </Box>
                     <Typography className="font-inter font-normal text-[16px]/[24px] text-[#475467] text-left">
                       {product.description}
@@ -761,7 +673,7 @@ export default function OurProductsTab() {
               <Box className="w-full flex justify-center items-center">
                 <Pagination
                   className="font-interMedium font-medium text-center text-sm text-[#475467]"
-                  count={Math.ceil(products.length / pageSize)}
+                  count={Math.ceil(data.length / pageSize)}
                   page={page}
                   boundaryCount={3}
                   siblingCount={0}
@@ -785,7 +697,7 @@ export default function OurProductsTab() {
           <Grid container spacing={6}>
             {currentPageData.length === 0 ? (
               <Box className="w-full mt-[120px] flex justify-center items-center font-interMedium font-medium text-2xl leading-[18px] text-[#344054] text-center cursor-pointer">
-                No bottle available
+                No pure water available
               </Box>
             ) : (
               currentPageData?.map((product, i) => {
@@ -795,34 +707,25 @@ export default function OurProductsTab() {
                     xs={12}
                     sm={6}
                     lg={4}
+                    xl={3}
                     key={`product - ${i}`}
-                    className="w-full flex flex-col gap-2"
+                    className="w-full flex flex-col gap-2 mx-4 sm:mx-0 cursor-pointer"
+                    onClick={() => router.push("/contact")}
                   >
                     <Image
                       src={product.src}
-                      className="w-[343px] sm:w-auto h-full sm:h-auto rounded-[10px] aspect-square"
+                      className="w-auto sm:w-auto h-auto sm:h-auto rounded-[10px] aspect-square hover:scale-[1.02]"
                       width={261}
                       height={241}
                       alt={product.name}
                     />
-                    <Box
-                      className="w-[255px] py-[4px] pr-[10px] pl-[4px] flex justify-between items-center gap-[6px] border border-solid rounded-[10px] border-[#D0D5DD]"
-                      sx={{ boxShadow: "0px 1px 2px 0px #1018280D" }}
-                    >
-                      <Box className="w-[106px] md:w-[106px] px-[6px] py-[2px] flex justify-start items-center border border-solid rounded-[6px] border-primary gap-[6px] bg-primary">
-                        <Typography
-                          variant="caption"
-                          className="font-interMedium font-medium text-xs leading-[18px] text-white text-center"
-                        >
-                          Get best price
-                        </Typography>
-                      </Box>
-                      <Typography
-                        variant="caption"
-                        className="font-interMedium font-medium text-[12px]/[18px] text-[#344054] text-center"
+                    <Box className="w-[120px] px-[6px] py-[2px] flex justify-start items-center border border-solid rounded-[6px] border-primary gap-[6px] bg-primary mt-2">
+                      <Button
+                        className="font-interMedium font-medium text-xs leading-[18px] text-white text-center cursor-pointer normal-case shadow-[0px_1px_2px_0px_#1018280D]"
+                        onClick={() => router.push("/contact")}
                       >
-                        MOQ: 10000 pcs
-                      </Typography>
+                        Get best price
+                      </Button>
                     </Box>
                     <Typography className="font-inter font-normal text-[16px]/[24px] text-[#475467] text-left">
                       {product.description}
@@ -835,7 +738,137 @@ export default function OurProductsTab() {
               <Box className="w-full flex justify-center items-center">
                 <Pagination
                   className="font-interMedium font-medium text-center text-sm text-[#475467]"
-                  count={Math.ceil(products.length / pageSize)}
+                  count={Math.ceil(data.length / pageSize)}
+                  page={page}
+                  boundaryCount={3}
+                  siblingCount={0}
+                  color="primary"
+                  onChange={handlePageChange}
+                  renderItem={(item) => (
+                    <PaginationItem
+                      slots={{
+                        previous: ArrowBackIcon,
+                        next: ArrowForwardIcon,
+                      }}
+                      {...item}
+                    />
+                  )}
+                />
+              </Box>
+            </Grid>
+          </Grid>
+        </TabPanel>
+        <TabPanel value={value} index={7}>
+          <Grid container spacing={6}>
+            {currentPageData.length === 0 ? (
+              <Box className="w-full mt-[120px] flex justify-center items-center font-interMedium font-medium text-2xl leading-[18px] text-[#344054] text-center cursor-pointer">
+                No preforms available
+              </Box>
+            ) : (
+              currentPageData?.map((product, i) => {
+                return (
+                  <Grid
+                    item
+                    xs={12}
+                    sm={6}
+                    lg={4}
+                    xl={3}
+                    key={`product - ${i}`}
+                    className="w-full flex flex-col gap-2 mx-4 sm:mx-0 cursor-pointer"
+                    onClick={() => router.push("/contact")}
+                  >
+                    <Image
+                      src={product.src}
+                      className="w-auto sm:w-auto h-auto sm:h-auto rounded-[10px] aspect-square hover:scale-[1.02]"
+                      width={261}
+                      height={241}
+                      alt={product.name}
+                    />
+                    <Box className="w-[120px] px-[6px] py-[2px] flex justify-start items-center border border-solid rounded-[6px] border-primary gap-[6px] bg-primary mt-2">
+                      <Button
+                        className="font-interMedium font-medium text-xs leading-[18px] text-white text-center cursor-pointer normal-case shadow-[0px_1px_2px_0px_#1018280D]"
+                        onClick={() => router.push("/contact")}
+                      >
+                        Get best price
+                      </Button>
+                    </Box>
+                    <Typography className="font-inter font-normal text-[16px]/[24px] text-[#475467] text-left">
+                      {product.description}
+                    </Typography>
+                  </Grid>
+                )
+              })
+            )}
+            <Grid item xs={12} sx={{ mt: 2 }}>
+              <Box className="w-full flex justify-center items-center">
+                <Pagination
+                  className="font-interMedium font-medium text-center text-sm text-[#475467]"
+                  count={Math.ceil(data.length / pageSize)}
+                  page={page}
+                  boundaryCount={3}
+                  siblingCount={0}
+                  color="primary"
+                  onChange={handlePageChange}
+                  renderItem={(item) => (
+                    <PaginationItem
+                      slots={{
+                        previous: ArrowBackIcon,
+                        next: ArrowForwardIcon,
+                      }}
+                      {...item}
+                    />
+                  )}
+                />
+              </Box>
+            </Grid>
+          </Grid>
+        </TabPanel>
+        <TabPanel value={value} index={8}>
+          <Grid container spacing={6}>
+            {currentPageData.length === 0 ? (
+              <Box className="w-full mt-[120px] flex justify-center items-center font-interMedium font-medium text-2xl leading-[18px] text-[#344054] text-center cursor-pointer">
+                No PET bottle available
+              </Box>
+            ) : (
+              currentPageData?.map((product, i) => {
+                return (
+                  <Grid
+                    item
+                    xs={12}
+                    sm={6}
+                    lg={4}
+                    xl={3}
+                    key={`product - ${i}`}
+                    className="w-full flex flex-col gap-2 mx-4 sm:mx-0 cursor-pointer"
+                    onClick={() => router.push("/contact")}
+                  >
+                    <Image
+                      src={product.src}
+                      className="w-auto sm:w-auto h-auto sm:h-auto rounded-[10px] aspect-square hover:scale-[1.02]"
+                      width={261}
+                      height={241}
+                      alt={product.name}
+                    />
+                    <Box className="w-[120px] px-[6px] py-[2px] flex justify-start items-center border border-solid rounded-[6px] border-primary gap-[6px] bg-primary mt-2">
+                      <Button
+                        className="font-interMedium font-medium text-xs leading-[18px] text-white text-center cursor-pointer normal-case shadow-[0px_1px_2px_0px_#1018280D]"
+                        onClick={() => router.push("/contact")}
+                      >
+                        Get best price
+                      </Button>
+                    </Box>
+                    <Typography className="font-inter font-normal text-[16px]/[24px] text-[#475467] text-left">
+                      {product.description}
+                    </Typography>
+                  </Grid>
+                )
+              })
+            )}
+            <Grid item xs={12} sx={{ mt: 2 }}>
+              <Box className="w-full flex justify-center items-center">
+                <Pagination
+                  className="font-interMedium font-medium text-center text-sm text-[#475467]"
+                  count={Math.ceil(data.length / pageSize)}
                   page={page}
                   boundaryCount={3}
                   siblingCount={0}

@@ -9,10 +9,10 @@ import { Box, CssBaseline, Link, Typography } from "@mui/material"
 
 export default function ProductPage() {
   return (
-    <Box className="w-full flex flex-col">
+    <Box className="w-full flex flex-col" data-aos="fade-down">
       <CssBaseline />
       <Box
-        id="hero-section"
+        id="contact-hero-section"
         component="div"
         className="w-full h-[1400px] xl:h-[914px] flex flex-col px-1 lg:px-4 py-4 md:py-[120px] relative bg-secondary mt-14 md:mt-1"
       >
@@ -40,7 +40,7 @@ export default function ProductPage() {
           <Box className="w-full px-4  flex flex-col justify-center items-center lg:flex-row gap-4">
             <Box
               component="div"
-              className="w-full xl:w-[268px] h-full xl:h-[290px] flex flex-col gap-16 bg-[#F9FAFB] p-6"
+              className="w-full xl:w-[268px] h-full xl:h-[290px] flex flex-col gap-16 bg-[#F9FAFB] p-6 hover:scale-[1.01]"
             >
               <SupportIcon />
               <Box className="w-full max-w-[238px] flex flex-col gap-[20px]">
@@ -68,7 +68,7 @@ export default function ProductPage() {
             </Box>
             <Box
               component="div"
-              className="w-full xl:w-[268px] h-full xl:h-[290px] flex flex-col gap-16 bg-[#F9FAFB] p-6"
+              className="w-full xl:w-[268px] h-full xl:h-[290px] flex flex-col gap-16 bg-[#F9FAFB] p-6 hover:scale-[1.01]"
             >
               <ChatIcon />
               <Box className="w-full max-w-[238px] flex flex-col gap-[20px]">
@@ -96,7 +96,7 @@ export default function ProductPage() {
             </Box>
             <Box
               component="div"
-              className="w-full xl:w-[268px] h-full xl:h-[290px] flex flex-col gap-16 bg-[#F9FAFB] p-6"
+              className="w-full xl:w-[268px] h-full xl:h-[290px] flex flex-col gap-16 bg-[#F9FAFB] p-6 hover:scale-[1.01]"
             >
               <LocationIcon />
               <Box className="w-full max-w-[238px] flex flex-col gap-[20px] justify-start items-start">
@@ -123,7 +123,7 @@ export default function ProductPage() {
             </Box>
             <Box
               component="div"
-              className="w-full xl:w-[268px] h-full xl:h-[290px] flex flex-col gap-16 bg-[#F9FAFB] p-6"
+              className="w-full xl:w-[268px] h-full xl:h-[290px] flex flex-col gap-16 bg-[#F9FAFB] p-6 hover:scale-[1.01]"
             >
               <CallIcon />
               <Box className="w-full lg:w-[238px] flex flex-col gap-[20px]">

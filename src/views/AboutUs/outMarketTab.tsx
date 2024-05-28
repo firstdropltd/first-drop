@@ -2,7 +2,13 @@
 import { ArrowForward } from "@/components/SVGs"
 import { Colors } from "@/components/Theme/colors"
 import { Fonts } from "@/components/Theme/font"
-import { styled, useMediaQuery, useTheme } from "@mui/material"
+import {
+  Divider,
+  Typography,
+  styled,
+  useMediaQuery,
+  useTheme,
+} from "@mui/material"
 import Box from "@mui/material/Box"
 import Tab from "@mui/material/Tab"
 import Tabs from "@mui/material/Tabs"
@@ -74,140 +80,125 @@ export default function OurMarketTab() {
   }
 
   return (
-    <Box className="w-full max-W-[1280px] h-full lg:h-[640px] flex-col lg:flex-row flex justify-between relative">
-      <StyledTabs
-        orientation="vertical"
-        variant="scrollable"
-        value={value}
-        onChange={handleChange}
-        sx={{
-          display: "inline-flex",
-          justifyContent: "center",
-          marginTop: { lg: "40px" },
-        }}
+    <Box className="w-full flex-col lg:flex-row flex justify-between relative gap-16">
+      <Box
+        className="w-full md:w-1/2 max-w-[610px] flex flex-col gap-8"
+        data-aos="fade-right"
       >
-        <StyledTab
-          label={
-            <Box component="div" className="w-full flex flex-col gap-[16px]">
-              <Box
-                component="span"
-                className="w-full font-helveticaBold font-bold text-[20px]/[30px] text-left text-text-primary"
-              >
-                Standard PET Bottles
-              </Box>
-              <Box
-                component="span"
-                className="w-full max-w-[350px] font-helveticaThin font-light text-[18px]/[28px] text-left text-text-primary tracking-[-0.002em]"
-              >
-                Our classic range of PET bottles caters to a wide array of
-                industries and applications.
-              </Box>
-              <Box className="w-[200px] flex gap-1 justify-start items-center">
-                <Box
-                  className={`flex justify-start gap-2 items-center normal-case font-helveticaMedium font-600 text-[16px]/[24px] text-left ${
-                    value === 0 ? "text-primary" : "text-[#0A2540]"
-                  } bg-transparent relative`}
-                >
-                  Learn more <ArrowForward />
-                </Box>
-              </Box>
-            </Box>
-          }
-          {...a11yProps(0)}
-        />
-        <StyledTab
-          label={
-            <Box component="div" className="w-full flex flex-col gap-[16px]">
-              <Box
-                component="span"
-                className="font-helveticaBold font-bold text-[20px]/[30px] text-left text-text-primary"
-              >
-                Customized Designs
-              </Box>
-              <Box
-                component="span"
-                className="w-full max-w-[400px] font-helveticaThin font-light text-[18px]/[28px] text-left text-text-primary"
-              >
-                Our team is adept at creating custom-designed PET bottles that
-                meet your specific requirements.
-              </Box>
-              <Box className="w-[200px] flex gap-1 justify-start items-center">
-                <Box
-                  className={`flex justify-start gap-2 items-center normal-case font-helveticaMedium font-600 text-[16px]/[24px] text-left ${
-                    value === 1 ? "text-primary" : "text-[#0A2540]"
-                  } bg-transparent relative`}
-                >
-                  Learn more <ArrowForward />
-                </Box>
-              </Box>
-            </Box>
-          }
-          {...a11yProps(1)}
-        />
-        <StyledTab
-          label={
-            <Box component="div" className="w-full flex flex-col gap-[16px]">
-              <Box
-                component="span"
-                className="font-helveticaBold font-bold text-[20px]/[30px] text-left text-text-primary"
-              >
-                Specialized Applications
-              </Box>
-              <Box
-                component="span"
-                className="w-full font-helveticaThin font-light text-[18px]/[28px] text-left text-text-primary"
-              >
-                We specialize in crafting PET bottles designed for specialized
-                applications, including those requiring unique shapes, or sizes.
-              </Box>
-              <Box className="w-[200px] flex gap-1 justify-start items-center">
-                <Box
-                  className={`flex justify-start gap-2 items-center normal-case font-helveticaMedium font-600 text-[16px]/[24px] text-left ${
-                    value === 2 ? "text-primary" : "text-[#0A2540]"
-                  } bg-transparent relative`}
-                >
-                  Learn more <ArrowForward />
-                </Box>
-              </Box>
-            </Box>
-          }
-          {...a11yProps(2)}
-        />
-      </StyledTabs>
-      <Box className="relative">
-        <TabPanel value={value} index={0}>
-          <Box className="w-full flex xl:justify-end xl:items-end">
-            <Image
-              src="/images/pink-bottle.jpeg"
-              className="w-[343px] sm:w-[full] h-[340px] lg:w-[468px] lg:h-[640px] xl:w-[576px] xl:h-[640px] xxl-h-[640px] rounded-[10px]"
-              width={576}
-              height={640}
-              alt="plastic bottle"
-            />
+        <Box className="w-full xl:w-[536px] flex gap-6">
+          {" "}
+          <Divider
+            orientation="vertical"
+            className="border-primary border-[3px] h-[240px] xl:h-[160px] "
+          />
+          <Box component="div" className="w-full flex flex-col gap-4">
+            <Typography
+              variant="h4"
+              className="w-full flex gap-6 text-text-primary font-bold font-helveticaBold text-[20px]/[30px] text-left"
+            >
+              Our Products
+            </Typography>
+            <Typography
+              variant="h2"
+              className="w-full text-text-light font-helveticaLight font-light text-[18px]/[28px] text-left"
+            >
+              Our products are produced in conformity with the Standard
+              Organization of Nigeria (SON), and we are fully registered with
+              the National Agency for Food and Drug Administration and Control
+              (NAFDAC RC. 1096978) .
+            </Typography>
           </Box>
-        </TabPanel>
-        <TabPanel value={value} index={1}>
-          <Box className="w-full flex xl:justify-end xl:items-end">
-            <Image
-              src="/images/blue-bottle-water.jpeg"
-              className="w-[343px] sm:w-[full] h-[340px] lg:w-[468px] lg:h-[640px] xl:w-[576px] xl:h-[640px] xxl-h-[640px] rounded-[10px]"
-              width={576}
-              height={640}
-              alt="plastic bottle"
-            />
+        </Box>
+        <Box component="div" className="w-full flex flex-col gap-4">
+          <Typography
+            variant="h4"
+            className="w-full flex gap-6 text-text-primary font-bold font-helveticaBold text-[20px]/[30px] text-left"
+          >
+            Our Aim
+          </Typography>
+
+          <Typography
+            variant="h2"
+            className="w-full text-text-light font-helveticaLight font-light text-[18px]/[28px] text-left"
+          >
+            First Drops Nig aim to be the best service provider in its markets
+            and we will d o this by:
+          </Typography>
+          <Box component="ul" className="mx-0 ml-2 px-0">
+            <Box
+              component="li"
+              className="w-full text-text-light font-helveticaLight font-light text-[18px]/[28px] tracking-[0.002em] text-left"
+            >
+              Being customer driven and meeting individual customer
+              requirements.
+            </Box>{" "}
+            <Box
+              component="li"
+              className="w-full text-text-light font-helveticaLight font-light text-[18px]/[28px] tracking-[0.002em] text-left"
+            >
+              Setting and monitoring achievement of objectives.
+            </Box>
+            <Box
+              component="li"
+              className="w-full text-text-light font-helveticaLight font-light text-[18px]/[28px] tracking-[0.002em] text-left"
+            >
+              Focusing on efficiency and the standard of services provided.
+            </Box>
+            <Box
+              component="li"
+              className="w-full text-text-light font-helveticaLight font-light text-[18px]/[28px] tracking-[0.002em] text-left"
+            >
+              Continually improving the effectiveness of the Quality Management.
+            </Box>
+            <Box
+              component="li"
+              className="w-full text-text-light font-helveticaLight font-light text-[18px]/[28px] tracking-[0.002em] text-left"
+            >
+              System by setting up of a high
+            </Box>
+            <Box
+              component="li"
+              className="w-full text-text-light font-helveticaLight font-light text-[18px]/[28px] tracking-[0.002em] text-left"
+            >
+              standard quality laboratory that caters for all our product range.
+               
+            </Box>
           </Box>
-        </TabPanel>
-        <TabPanel value={value} index={2}>
-          <Box className="w-full flex xl:justify-end xl:items-end">
-            <Image
-              src="/images/green-spray-bottle.jpeg"
-              className="w-[343px] sm:w-[full] h-[340px] lg:w-[468px] lg:h-[640px] xl:w-[576px] xl:h-[640px] xxl-h-[640px] rounded-[10px]"
-              width={576}
-              height={640}
-              alt="plastic bottle"
-            />
-          </Box>
-        </TabPanel>
+          <Typography
+            variant="h2"
+            className="w-full text-text-light font-helveticaLight font-light text-[18px]/[28px] text-left"
+          >
+            We aim to maintain long term relationships with our customers and as
+            thus the needs of our customers are fundamental in all work that we
+            undertake.
+          </Typography>
+          <Typography
+            variant="h4"
+            className="w-full flex gap-6 text-text-primary font-bold font-helveticaBold text-[20px]/[30px] text-left"
+          >
+            Specialized Applications
+          </Typography>
+
+          <Typography
+            variant="h2"
+            className="w-full text-text-light font-helveticaLight font-light text-[18px]/[28px] text-left"
+          >
+            We specialize in crafting PET bottles designed for specialized
+            applications, including those requiring unique shapes, or sizes.
+          </Typography>
+        </Box>
+      </Box>
+      <Box
+        className="w-full md:w-1/2  flex flex-col gap-4 md:mt-8"
+        data-aos="fade-left"
+      >
+        <Image
+          src="/images/blue-test-tubes.jpeg"
+          className="w-full sm:w-[full] h-full lg:h-[450px] lg:w-[450px] xxl:h-[512px] xxl:w-[512px] rounded-[10px] md:mt-8 lg:mx-8"
+          width={512}
+          height={557}
+          alt="plastic bottle"
+        />
       </Box>
     </Box>
   )

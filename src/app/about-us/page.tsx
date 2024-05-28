@@ -1,10 +1,12 @@
 "use client"
 import { Box, Button, CssBaseline, Divider, Typography } from "@mui/material"
-import Image from "next/image"
+import { useRouter } from "next/navigation"
+import { CountUp } from "use-count-up"
 
 export default function AboutUsPage() {
+  const router = useRouter()
   return (
-    <Box className="w-full flex flex-col">
+    <Box className="w-full flex flex-col" data-aos="fade-down">
       <CssBaseline />
       <Box
         id="hero-section"
@@ -39,7 +41,10 @@ export default function AboutUsPage() {
               (NAFDAC RC. 1096978).
             </Box>
             <Box className="w-full flex-col md:flex-row flex justify-center items-center gap-4 md:gap-2 my-4">
-              <Button className="w-[111.64px] gap-0 rounded-[16.5px] normal-case bg-primary text-white font-medium font-helveticaMedium text-[15px]/[24px]">
+              <Button
+                className="w-[111.64px] gap-0 rounded-[16.5px] normal-case bg-primary text-white font-medium font-helveticaMedium text-[15px]/[24px] hover:scale-[1.02]"
+                onClick={() => router.push("/contact")}
+              >
                 Contact us
               </Button>
             </Box>
@@ -51,114 +56,120 @@ export default function AboutUsPage() {
         component="section"
         id="our-market"
         className="w-full flex flex-col pt-[86px] lg:pt-[120px] pb-[8px] gap-[64px] px-4 xl:px-[80px] xxl:px-[96px] justify-center items-center"
+        data-aos="fade-up"
       >
         <Box
           component="div"
-          className="w-full max-w-[1080px] flex flex-col gap-5"
+          className="w-full max-w-[1243px] flex flex-col gap-5"
         >
           <Typography
             variant="h4"
             className="w-full font-helveticaBold font-bold text-[16px] leading-6 text-left text-primary"
           >
-            Why First Drop
+            Our Commitment
           </Typography>
           <Typography
             variant="h4"
-            className="w-full max-w-[690px] font-helveticaMedium font-medium text-[28px] xl:text-[38px] leading-[38px] xl:leading-[48px] tracking-[-0.2px] text-left text-text-primary"
+            className="w-full max-w-[690.06px] font-helveticaMedium font-medium text-[28px] xl:text-[38px] leading-[38px] xl:leading-[48px] tracking-[-0.2px] text-left text-text-primary"
           >
             Dedicated to excellence, evolving from bottle manufacturing to
             delivering the purest, most refreshing water solutions
           </Typography>
         </Box>
-        <Box className="w-full max-w-[1080px] flex flex-col lg:flex-row gap-4">
+        <Box className="w-full max-w-[1243px] flex flex-col lg:flex-row gap-4 xxl:gap-8 justify-between">
           <Box
             component="div"
-            className="w-full xl:w-[270px] h-[150px] xl:h-[208px] flex flex-col gap-4"
+            className="w-full xl:w-[246.31px]  h-[150px] xl:h-[208px] flex flex-col gap-4"
           >
             <Typography
               variant="h4"
-              className="w-full flex gap-6 text-text-primary font-medium font-helveticaMedium text-sm leading-6 tracking-[0.20000000298023224px] text-left h-[24px]"
+              className="w-full flex gap-4 text-text-primary font-medium font-helveticaMedium text-sm leading-6 tracking-[0.20000000298023224px] text-left h-[24px]"
             >
-              <Divider orientation="vertical" className="border-primary" /> Our
-              aim
+              <Divider
+                orientation="vertical"
+                className="border-primary border-[1.11px]"
+              />{" "}
+              Our aim
             </Typography>
             <Typography
               variant="h2"
-              className="w-full xl:w-[238.31px] text-text-light font-helveticaLight font-light text-[15px]/[24px] traking-[0.20000000298023224px] text-left pl-6"
+              className="w-full text-text-light font-helveticaLight font-light text-[15px]/[24px] traking-[0.20000000298023224px] text-left pl-6"
             >
-              We aim to maintain long{" "}
-              <span className="text-primary font-medium font-helveticaMedium">
-                term relationship
-              </span>{" "}
-              with our customers and as thus the need the need for our customer
-              are fundamental in all our work.{" "}
+              We aim to maintain long term relationships with our customers and
+              as thus the needs of our customers are fundamental in all work
+              that we undertake.
             </Typography>
           </Box>
-          <Box className="w-full xl:w-[270px] h-[150px] xl:h-[208px] flex flex-col gap-4">
-            {" "}
+          <Box className="w-full xl:w-[292px]  h-[150px] xl:h-[208px] flex flex-col gap-4">
             <Typography
               variant="h4"
               className="w-full flex gap-6 text-text-primary font-medium font-helveticaMedium text-sm leading-6 tracking-[0.20000000298023224px] text-left h-[24px]"
             >
-              <Divider orientation="vertical" className="border-primary" />
+              <Divider
+                orientation="vertical"
+                className="border-primary border-[1.11px]"
+              />
               Our commitment
             </Typography>
             <Typography
               variant="h2"
-              className="w-full xl:w-[260px] text-text-light font-helveticaLight font-light text-[15px]/[24px] traking-[0.20000000298023224px] text-left pl-6"
+              className="w-full text-text-light font-helveticaLight font-light text-[15px]/[24px] traking-[0.20000000298023224px] text-left pl-6"
             >
-              We are commitment to our{" "}
-              <span className="text-primary font-medium font-helveticaMedium">
-                customers satisfaction
-              </span>{" "}
-              at First Drop and will continue to produce products to the highest
-              quality standards that meet specification.
+              We are committed to Customer satisfaction at First Drops Nig Ltd
+              and will continue to produce products of the highest quality
+              standards that meet specifications. We are committed to prompt and
+              efficient delivery of services.
             </Typography>
           </Box>
-          <Box className="w-full xl:w-[270px] h-[150px] xl:h-[208px] flex flex-col gap-4">
+          <Box className="w-full xl:w-[279px]  h-[150px] xl:h-[208px] flex flex-col gap-4">
             {" "}
             <Typography
               variant="h4"
               className="w-full flex gap-6 text-text-primary font-medium font-helveticaMedium text-sm leading-6 tracking-[0.20000000298023224px] text-left h-[24px]"
             >
-              <Divider orientation="vertical" className="border-primary" /> Our
-              quality policy
+              <Divider
+                orientation="vertical"
+                className="border-primary border-[1.11px]"
+              />{" "}
+              Our quality policy
             </Typography>
             <Typography
               variant="h2"
-              className="w-full xl:w-[230.31px] text-text-light font-helveticaLight font-light text-[15px]/[24px] traking-[0.20000000298023224px] text-left pl-6"
+              className="w-full text-text-light font-helveticaLight font-light text-[15px]/[24px] traking-[0.20000000298023224px] text-left pl-6"
             >
-              We have established{" "}
-              <span className="text-primary font-medium font-helveticaMedium">
-                quality
-              </span>{" "}
-              policy statement appropriate for the needs of our organization and
-              customers, to a continual improvement.
+              The company has an established Quality policy statement
+              appropriate for the needs of the organization and its customers,
+              which includes our commitment to continual improvement and
+              enhancing customer satisfaction.
             </Typography>
           </Box>
-          <Box className="w-full xl:w-[270px] h-[150px] xl:h-[208px] flex flex-col gap-4">
+          <Box className="w-full xl:w-[313px] h-[150px] xl:h-[208px] flex flex-col gap-4">
             <Typography
               variant="h4"
               className="w-full flex gap-6 text-text-primary font-medium font-helveticaMedium text-sm leading-6 tracking-[0.20000000298023224px] text-left h-[24px]"
             >
-              <Divider orientation="vertical" className="border-primary" /> Our
-              environment
+              <Divider
+                orientation="vertical"
+                className="border-primary border-[1.11px]"
+              />{" "}
+              Our environment
             </Typography>
             <Typography
               variant="h2"
-              className="w-full xl:w-[220.31px] text-text-light font-helveticaLight font-light text-[15px]/[24px] traking-[0.20000000298023224px] text-left pl-6"
+              className="w-full text-text-light font-helveticaLight font-light text-[15px]/[24px] traking-[0.20000000298023224px] text-left pl-6"
             >
-              We take our{" "}
-              <span className="text-primary font-medium font-helveticaMedium">
-                environmental
-              </span>{" "}
-              responsibilities seriously. With our research into possible uses
-              of recycled materials without compromise{" "}
+              First Drops Nig Ltd takes its environmental responsibilities
+              seriously. This reflects on our research into the possible uses of
+              recycled materials without compromising standard together with our
+              program of minimizing production waste.
             </Typography>
           </Box>
         </Box>
-        <Box className="w-full max-w-[1080px] flex-col md:flex-row flex justify-start items-start gap-4 md:gap-2 mt-[-40px]">
-          <Button className="w-[111.64px] gap-0 rounded-[16.5px] normal-case bg-primary text-white font-medium font-helveticaMedium text-[15px]/[24px]">
+        <Box className="w-full max-w-[1243px] flex-col md:flex-row flex justify-start items-start gap-4 md:gap-2 mt-[-40px]">
+          <Button
+            className="w-[111.64px] gap-0 rounded-[16.5px] normal-case bg-primary text-white font-medium font-helveticaMedium text-[15px]/[24px] hover:scale-[1.02]"
+            onClick={() => router.push("/contact")}
+          >
             Contact us
           </Button>
         </Box>
@@ -168,6 +179,7 @@ export default function AboutUsPage() {
         component="section"
         id="our-market"
         className="w-full overflow-hidden skew-top"
+        data-aos="fade-up"
       >
         <Box
           className="w-full h-[1005.54px] flex flex-col justify-center items-center py-[90px]  gap-[64px] px-4 lg:px-[80px] 2xl:px-[96px] origin-top-right -skew-y-6  bg-secondary relative "
@@ -201,20 +213,77 @@ export default function AboutUsPage() {
                   variant="h4"
                   className="w-full max-w-[564px] font-helveticaMedium font-medium text-[36px] leading-[48px] tracking-[-0.20000000298023224px] text-left text-white"
                 >
-                  Transforming PET Manufacturing and Refreshing Water
+                  Product Range
                 </Typography>
-                <Typography
-                  variant="h4"
-                  className="w-full max-w-[406.4px] font-helveticaLight font-light text-[18px] leading-[28px] tracking-[0.20000000298023224px] text-left text-[#ADBDCC]"
-                >
-                  At First Drops, we bring innovation and sustainability to the
-                  forefront of our craft. With decades of experience in PET
-                  manufacturing and delivering pure, refreshing water solutions,
-                  our passion drives us to{" "}
-                  <span className="text-primary font-helveticaMedium font-medium">
-                    excel in every aspect of our business.
-                  </span>
-                </Typography>
+                <Box className="w-full flex flex-col md:flex-row gap-8">
+                  <Box
+                    component="div"
+                    className="w-full max-w-[650px] flex flex-col gap-4"
+                  >
+                    <Typography className="w-full max-w-[280px] font-helveticaLight font-light text-[18px]/[28px] tracking-[-0.20000000298023224px] text-left text-white uppercase">
+                      Plastic and PET Production
+                    </Typography>
+                    <Box component="ul" className="m-0 ml-4 p-0">
+                      <Box
+                        component="li"
+                        className="w-full font-helveticaLight font-light text-[18px]/[28px] tracking-[-0.20000000298023224px] text-left text-white normal-case"
+                      >
+                        PREFORMS - Various sizes
+                      </Box>
+                      <Box
+                        component="li"
+                        className="w-full font-helveticaLight font-light text-[18px]/[28px] tracking-[-0.20000000298023224px] text-left text-white normal-case"
+                      >
+                         HD/LDPE/PP Plastic containers - Generic and customized
+                      </Box>
+                      <Box
+                        component="li"
+                        className="w-full font-helveticaLight font-light text-[18px]/[28px] tracking-[-0.20000000298023224px] text-left text-white normal-case"
+                      >
+                        CAP/CLOSURES - Generic and customized
+                      </Box>
+                      <Box
+                        component="li"
+                        className="w-full font-helveticaLight font-light text-[18px]/[28px] tracking-[-0.20000000298023224px] text-left text-white normal-case"
+                      >
+                         Branding of bottles, client’s materials for ceremonies
+                        and events
+                      </Box>
+                      <Box
+                        component="li"
+                        className="w-full font-helveticaLight font-light text-[18px]/[28px] tracking-[-0.20000000298023224px] text-left text-white normal-case"
+                      >
+                         Recycling of bottles and bags
+                      </Box>
+                      <Box
+                        component="li"
+                        className="w-full font-helveticaLight font-light text-[18px]/[28px] tracking-[-0.20000000298023224px] text-left text-white normal-case"
+                      >
+                        Printing of nylon films (pure water) Rasing and cutting
+                        of nylon materials
+                      </Box>
+                      <Box
+                        component="li"
+                        className="w-full font-helveticaLight font-light text-[18px]/[28px] tracking-[-0.20000000298023224px] text-left text-white normal-case"
+                      >
+                        Preform (moulding) production with client’s materials
+                      </Box>
+                    </Box>
+                  </Box>
+                  <Box
+                    component="div"
+                    className="w-full max-w-[650px] flex flex-col gap-4"
+                  >
+                    <Typography className="w-full max-w-[280px] font-helveticaLight font-light text-[18px]/[28px] tracking-[-0.20000000298023224px] text-left text-white uppercase">
+                      Water Products
+                    </Typography>
+                    <Typography className="w-full font-helveticaLight font-light text-[18px]/[28px] tracking-[-0.20000000298023224px] text-left text-white normal-case">
+                      All our products can be customized to suit specific
+                      requirements; these are part of our journey right from the
+                      idea stage to execution.
+                    </Typography>
+                  </Box>
+                </Box>
               </Box>
             </Box>
             <Box className="w-full overflow-hidden skew-bottom mt-6">
@@ -236,7 +305,7 @@ export default function AboutUsPage() {
                           orientation="vertical"
                           className="border-primary"
                         />{" "}
-                        10 years+
+                        <CountUp isCounting end={11} duration={3.2} /> years+
                       </Typography>
                       <Typography
                         variant="h2"
@@ -254,7 +323,7 @@ export default function AboutUsPage() {
                           orientation="vertical"
                           className="border-primary"
                         />{" "}
-                        35+
+                        <CountUp isCounting end={35} duration={3.2} />+
                       </Typography>
                       <Typography
                         variant="h2"
@@ -272,7 +341,7 @@ export default function AboutUsPage() {
                           orientation="vertical"
                           className="border-primary"
                         />{" "}
-                        122+
+                        <CountUp isCounting end={122} duration={3.2} />+
                       </Typography>
                       <Typography
                         variant="h2"
@@ -290,7 +359,7 @@ export default function AboutUsPage() {
                           orientation="vertical"
                           className="border-primary"
                         />{" "}
-                        1000+
+                        <CountUp isCounting end={1000} duration={3.2} />+
                       </Typography>
                       <Typography
                         variant="h2"

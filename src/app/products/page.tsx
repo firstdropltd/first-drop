@@ -4,10 +4,10 @@ import { Box, CssBaseline, Typography } from "@mui/material"
 
 export default function ProductPage() {
   return (
-    <Box className="w-full flex flex-col">
+    <Box className="w-full flex flex-col" data-aos="fade-down">
       <CssBaseline />
       <Box
-        id="hero-section"
+        id="products-hero-section"
         component="div"
         className="w-full h-[340px] xl:h-[482px] flex flex-col px-2 lg:px-4 py-8 md:py-[120px] relative bg-secondary mt-14 md:mt-1"
       >

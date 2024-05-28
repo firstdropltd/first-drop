@@ -27,7 +27,7 @@ export default function ProductsSlides() {
           },
           1280: {
             slidesPerView: 3,
-            spaceBetween: 20,
+            spaceBetween: 0,
           },
         }}
         autoplay={{
@@ -40,16 +40,16 @@ export default function ProductsSlides() {
         <Box className="swiper-wrapper">
           {[
             {
-              name: "blue plastic bottle",
-              imgSrc: "/images/blue-bottle-water.jpeg",
+              name: "yellow jerry can",
+              imgSrc: "/images/yellow-jerry-can.jpeg",
             },
             {
-              name: "dispenser plastic bottle",
-              imgSrc: "/images/dispenser.jpeg",
+              name: "water dispenser",
+              imgSrc: "/images/water-dispenser.jpeg",
             },
             {
-              name: "green plastic bottle",
-              imgSrc: "/images/green-spray-bottle.jpeg",
+              name: "blue jerry can",
+              imgSrc: "/images/blue-jerry-can.jpeg",
             },
           ].map((item, index) => (
             <SwiperSlide
@@ -63,10 +63,10 @@ export default function ProductsSlides() {
               }}
             >
               <Image
-                className="w-full h-[352px] sm:w-[260px] sm:h-[250px] lg:w-[350px] lg:h-[380px] xxl:w-[460.27px] xxl:h-[355px] rounded-lg aspect-square"
+                className="w-full h-[352px] sm:w-[260px] sm:h-[250px] lg:w-[339px] lg:h-[308px] xxl:w-[429px] xxl:h-[388px] rounded-lg aspect-square"
                 src={item.imgSrc}
-                width={300}
-                height={250}
+                width={389}
+                height={358}
                 alt={item.name}
               />
             </SwiperSlide>
