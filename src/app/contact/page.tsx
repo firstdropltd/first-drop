@@ -139,7 +139,7 @@ export default function ProductPage() {
                     Mon-Fri from 8am to 5pm.
                   </Box>
                 </Typography>
-                <Box className="w-full flex justify-between items-start">
+                <Box className="w-full flex flex-col justify-between items-start">
                   <Link
                     href="tel: +234 8033497101"
                     underline="hover"

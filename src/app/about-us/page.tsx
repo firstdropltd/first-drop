@@ -182,7 +182,7 @@ export default function AboutUsPage() {
         data-aos="fade-up"
       >
         <Box
-          className="w-full h-[1005.54px] flex flex-col justify-center items-center py-[90px]  gap-[64px] px-4 lg:px-[80px] 2xl:px-[96px] origin-top-right -skew-y-6  bg-secondary relative "
+          className="w-full h-full md:h-[1005.54px] flex flex-col justify-center items-center py-[90px]  gap-[64px] px-4 lg:px-[80px] 2xl:px-[96px] origin-top-right -skew-y-6  bg-secondary relative "
           sx={{
             backgroundColor: "#101828",
             backgroundImage: {
@@ -272,7 +272,7 @@ export default function AboutUsPage() {
                   </Box>
                   <Box
                     component="div"
-                    className="w-full max-w-[650px] flex flex-col gap-4"
+                    className="w-full max-w-[361px] flex flex-col gap-4"
                   >
                     <Typography className="w-full max-w-[280px] font-helveticaLight font-light text-[18px]/[28px] tracking-[-0.20000000298023224px] text-left text-white uppercase">
                       Water Products
@@ -295,75 +295,108 @@ export default function AboutUsPage() {
                   <Box className="w-full max-w-[1080px] flex flex-col lg:flex-row lg:gap-4">
                     <Box
                       component="div"
-                      className="w-full xl:w-[270px] h-[120px] flex flex-col gap-4"
+                      className="w-full h-[100px] xl:w-[270px] md:h-[120px] flex flex-col gap-1 md:gap-4"
                     >
                       <Typography
                         variant="h4"
-                        className="w-full flex gap-6 text-white font-medium font-helveticaMedium text-[24px] leading-8 tracking-[0.10000000149011612px] text-left h-[24px]"
+                        className="w-full flex  gap-4 md:gap-6 text-white font-medium font-helveticaMedium text-[24px] leading-8 tracking-[0.10000000149011612px] text-left h-[24px]"
                       >
                         <Divider
                           orientation="vertical"
-                          className="border-primary"
+                          className="border-primary border-[1.1px]"
                         />{" "}
-                        <CountUp isCounting end={11} duration={3.2} /> years+
+                        <CountUp
+                          isCounting
+                          end={11}
+                          duration={3.2}
+                          easing="linear"
+                        />{" "}
+                        years+
                       </Typography>
                       <Typography
                         variant="h2"
-                        className="w-full xl:w-[238.31px] text-[#ADBDCC] font-helveticaLight font-light text-[15px]/[24px] traking-[0.20000000298023224px] text-left pl-6"
+                        className="w-[238.31px] text-[#ADBDCC] font-helveticaLight font-light text-[15px]/[24px] traking-[0.20000000298023224px] text-left pl-6"
                       >
                         We have cultivated a legacy of trust and reliability.
                       </Typography>
                     </Box>
-                    <Box className="w-full xl:w-[270px] h-[120px] flex flex-col gap-4">
+                    <Box
+                      component="div"
+                      className="w-full h-[100px] xl:w-[270px] md:h-[120px] flex flex-col gap-1 md:gap-4"
+                    >
                       <Typography
                         variant="h4"
-                        className="w-full flex gap-6 text-white font-medium font-helveticaMedium text-[22px] leading-8 tracking-[0.10000000149011612px] text-left h-[24px]"
+                        className="w-full flex  gap-4 md:gap-6 text-white font-medium font-helveticaMedium text-[24px] leading-8 tracking-[0.10000000149011612px] text-left h-[24px]"
                       >
                         <Divider
                           orientation="vertical"
-                          className="border-primary"
+                          className="border-primary border-[1.1px]"
                         />{" "}
-                        <CountUp isCounting end={35} duration={3.2} />+
+                        <CountUp
+                          isCounting
+                          end={35}
+                          duration={3.2}
+                          easing="linear"
+                        />
+                        +
                       </Typography>
                       <Typography
                         variant="h2"
-                        className="w-full xl:w-[238.31px] text-[#ADBDCC] font-helveticaLight font-light text-[15px]/[24px] traking-[0.20000000298023224px] text-left pl-6"
+                        className="w-[238.31px] text-[#ADBDCC] font-helveticaLight font-light text-[15px]/[24px] traking-[0.20000000298023224px] text-left pl-6"
                       >
                         Precision-crafted PET bottles from a diverse range.
                       </Typography>
                     </Box>
-                    <Box className="w-full xl:w-[270px] h-[120px] flex flex-col gap-4">
+                    <Box
+                      component="div"
+                      className="w-full h-[100px] xl:w-[270px] md:h-[120px] flex flex-col gap-1 md:gap-4"
+                    >
                       <Typography
                         variant="h4"
-                        className="w-full flex gap-6 text-white font-medium font-helveticaMedium text-[22px] leading-8 tracking-[0.10000000149011612px] text-left h-[24px]"
+                        className="w-full flex  gap-4 md:gap-6 text-white font-medium font-helveticaMedium text-[24px] leading-8 tracking-[0.10000000149011612px] text-left h-[24px]"
                       >
                         <Divider
                           orientation="vertical"
-                          className="border-primary"
+                          className="border-primary border-[1.1px]"
                         />{" "}
-                        <CountUp isCounting end={122} duration={3.2} />+
+                        <CountUp
+                          isCounting
+                          end={122}
+                          duration={3.2}
+                          easing="linear"
+                        />
+                        +
                       </Typography>
                       <Typography
                         variant="h2"
-                        className="w-full xl:w-[238.31px] text-[#ADBDCC] font-helveticaLight font-light text-[15px]/[24px] traking-[0.20000000298023224px] text-left pl-6"
+                        className="w-[238.31px] text-[#ADBDCC] font-helveticaLight font-light text-[15px]/[24px] traking-[0.20000000298023224px] text-left pl-6"
                       >
                         Dedicated employees behind our success.
                       </Typography>
                     </Box>
-                    <Box className="w-full xl:w-[270px] h-[120px] flex flex-col gap-4">
+                    <Box
+                      component="div"
+                      className="w-full h-[100px] xl:w-[270px] md:h-[120px] flex flex-col gap-1 md:gap-4"
+                    >
                       <Typography
                         variant="h4"
-                        className="w-full flex gap-6 text-white font-medium font-helveticaMedium text-[24px] leading-8 tracking-[0.10000000149011612px] text-left h-[24px]"
+                        className="w-full flex  gap-4 md:gap-6 text-white font-medium font-helveticaMedium text-[24px] leading-8 tracking-[0.10000000149011612px] text-left h-[24px]"
                       >
                         <Divider
                           orientation="vertical"
-                          className="border-primary"
+                          className="border-primary border-[1.1px]"
                         />{" "}
-                        <CountUp isCounting end={1000} duration={3.2} />+
+                        <CountUp
+                          isCounting
+                          end={1000}
+                          duration={3.2}
+                          easing="linear"
+                        />
+                        +
                       </Typography>
                       <Typography
                         variant="h2"
-                        className="w-full xl:w-[238.31px] text-[#ADBDCC] font-helveticaLight font-light text-[15px]/[24px] traking-[0.20000000298023224px] text-left pl-6"
+                        className="w-[238.31px] text-[#ADBDCC] font-helveticaLight font-light text-[15px]/[24px] traking-[0.20000000298023224px] text-left pl-6"
                       >
                         Unique PET bottles manufactured for customers.
                       </Typography>
