@@ -74,6 +74,7 @@ export default function HomePage() {
               <Button
                 className="w-full h-[48px] md:h-[33px] md:w-[151.64px] rounded-[16.5px] bg-white gap-0 normal-case md:bg-transparent text-[#344054] md:text-white font-medium font-helveticaMedium text-[14px]/[24px] tracking-[0.2px] px-[16px] py-[12px] hover:scale-[1.02]"
                 endIcon={<AngleForward />}
+                onClick={() => router.push("/products")}
               >
                 View products
               </Button>
@@ -231,6 +232,7 @@ export default function HomePage() {
                 <Button
                   className="w-[141.64px] gap-0 rounded-[16.5px] normal-case bg-primary text-white font-medium font-helveticaMedium text-[15px]/[24px] tracking-[0.2px] my-4 hover:scale-[1.02]"
                   endIcon={<AngleForward />}
+                  onClick={() => router.push("/products")}
                 >
                   View products
                 </Button>
