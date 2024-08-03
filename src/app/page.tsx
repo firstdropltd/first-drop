@@ -2,6 +2,7 @@
 import { AngleForward } from "@/components/SVGs"
 import OurMarketTab from "@/views/AboutUs/outMarketTab"
 import ProductsSlides from "@/views/AboutUs/productswiper"
+import HomePageImageSlides from "@/views/Home"
 import { Box, Button, CssBaseline, Divider, Typography } from "@mui/material"
 import Image from "next/image"
 import { useRouter } from "next/navigation"
@@ -108,47 +109,55 @@ export default function HomePage() {
                 src={`https://www.youtube.com/embed/ZrYTLqVvlcc?autoplay=0&color=white&fs=0&rel=0`}
                 title="first drop nigeria limited"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                loading="lazy"
               ></iframe>
             </div>
           </Box>
         </Box>
       </Box>
       {/* SECTION TWO */}
-      <Box
-        component="section"
+      <section
         id="our-market"
-        className="w-full flex flex-col pt-[186px] lg:pt-[280px] xl:pt-[380px] pb-[8px] gap-[64px] px-4 lg:px-[75px] xxl:px-[128px]"
+        className="w-full relative flex flex-col pt-[186px] lg:pt-[280px] xl:pt-[500px] xxl:pt-[580px] gap-[64px] px-4 lg:px-[75px] xxl:px-[128px] pb-[-250px]"
         data-aos="fade-up"
       >
-        <Box
-          component="div"
-          className="w-full max-w-[1440px] flex flex-col gap-5 px-2"
-        >
-          <Typography
-            variant="h4"
-            className="w-full font-helveticaBold font-bold text-[16px] leading-6 text-left text-primary"
-          >
+        <div className="w-full max-w-[1440px] flex flex-col gap-5 px-2">
+          <h4 className="w-full font-helveticaBold font-bold text-[16px] leading-6 text-left text-primary">
             Our Company
-          </Typography>
-          <Typography
-            variant="h4"
-            className="w-full max-w-[746px] font-helveticaBold font-bold text-[30px] leading-[38px] md:text-[36px] md:leading-[44px] tracking-[0.20000000298023224px] text-left text-text-primary"
-          >
+          </h4>
+          <h4 className="w-full max-w-[746px] font-helveticaBold font-bold text-[30px]/[38px] md:text-[36px] md:leading-[44px] tracking-[0.20000000298023224px] text-left text-text-primary">
             First Drops Nigeria Limited is registered under the laws of the
             company and allied matters Decree 1990 with company registration no.
             RC. 1096978
-          </Typography>
-          <Typography
-            variant="h4"
-            className="w-full max-w-[730px] font-helveticaLight font-light text-[18px] leading-[30px] tracking-[0.20000000298023224px] text-left text-[#475467]"
-          >
+          </h4>
+          <h4 className="w-full max-w-[730px] font-helveticaLight font-light text-[18px]/[30px] tracking-[0.20000000298023224px] text-left text-[#475467]">
             First Drops Nigeria Limited is an indigenous company owned by a
             Nigerian. Since its registration in 2013, it has been in the
             business of table water and plastic product production.
-          </Typography>
-        </Box>
+          </h4>
+        </div>
         <OurMarketTab />
-      </Box>
+        <div className="w-full flex flex-col gap-8 md:gap-12 mt-[186px] lg:mt-[280px] xl:mt-[84px] xxl:mt-[96px] -mb-[120px] xl:-mb-[200px] shadow-[0px_0px_0px_1px_#0000000D,0px_40px_32px_0px_#00000005,0px_22px_18px_0px_#0000000A] pl-[20px] xl:pl-[40px] pt-[40px] pb-[140px] xl:pt-[80px] xl:pb-[240px]">
+          <div className="w-full flex flex-col gap-1">
+            <div className="max-w-[564px] h-[44px] md:h-[54px] flex items-center gap-[34px]">
+              <Divider
+                orientation="vertical"
+                className="border-primary border-[3px] h-full"
+              />{" "}
+              <h4 className="w-full h-full font-helveticaBold font-bold text-[20px]/[22px] sm:text-[23px]/[22px] text-left text-text-primary">
+                First Drops&apos;s bottled water:
+                <span className="block">Proudly Nigerian.</span>
+              </h4>
+            </div>
+            <h4 className="w-full max-w-[428px] font-helveticaLight font-light text-[18px] leading-[30px] tracking-[0.20000000298023224px] text-[#475467] text-left">
+              We’re honored to be the bottled water that keeps our nation&apos;s
+              leaders, like Billionaire, foremost, entrepreneur and investor Mr.
+              Femi Otedola hydrated.
+            </h4>
+          </div>
+          <HomePageImageSlides />
+        </div>
+      </section>
       {/* SECTION THREE */}
       <Box
         component="section"
@@ -247,6 +256,7 @@ export default function HomePage() {
                   width={504}
                   height={458}
                   alt="plastic bottle"
+                  loading="lazy"
                 />
               </Box>
             </Box>

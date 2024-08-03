@@ -198,6 +198,7 @@ export default function OurMarketTab() {
           width={512}
           height={557}
           alt="plastic bottle"
+          loading="lazy"
         />
       </Box>
     </Box>

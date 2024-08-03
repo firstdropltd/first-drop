@@ -144,6 +144,7 @@ export default function OurBlogs() {
                 width={384}
                 height={240}
                 alt={blog.title}
+                loading="lazy"
               />
               <Box className="w-full flex flex-col gap-2 cursor-pointer justify-start items-start">
                 <Box

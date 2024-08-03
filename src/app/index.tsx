@@ -119,7 +119,13 @@ export default function HomePageLayoutWrapper({
     >
       <Toolbar sx={{ minHeight: `50px !important` }}>
         <Link underline="none" href="/">
-          <Image src="/images/logo.svg" width={50} height={50} alt="logo" />
+          <Image
+            src="/images/logo.svg"
+            width={50}
+            height={50}
+            alt="logo"
+            loading="lazy"
+          />
         </Link>
         <Box
           sx={{
@@ -213,10 +219,22 @@ export default function HomePageLayoutWrapper({
       >
         <Toolbar className="w-full justify-between pt-1">
           <Link underline="none" href="/" className="hidden md:flex">
-            <Image src="/images/logo.svg" width={100} height={65} alt="logo" />
+            <Image
+              src="/images/logo.svg"
+              width={100}
+              height={65}
+              alt="logo"
+              loading="lazy"
+            />
           </Link>
           <Link underline="none" href="/" className="flex md:hidden">
-            <Image src="/images/logo.svg" width={50} height={50} alt="logo" />
+            <Image
+              src="/images/logo.svg"
+              width={50}
+              height={50}
+              alt="logo"
+              loading="lazy"
+            />
           </Link>
           <StyledList disablePadding className="hidden md:flex">
             {menu?.map((item, index) => {

@@ -6,9 +6,9 @@ import "swiper/css/pagination"
 import { Autoplay } from "swiper/modules"
 import { Swiper, SwiperSlide } from "swiper/react"
 
-export default function ProductsSlides() {
+export default function HomePageImageSlides() {
   return (
-    <Box className="relative w-full mt-4">
+    <Box className="w-full">
       <Swiper
         slidesPerView={1.1}
         spaceBetween={25}
@@ -26,7 +26,11 @@ export default function ProductsSlides() {
             spaceBetween: 0,
           },
           1280: {
-            slidesPerView: 3,
+            slidesPerView: 3.1,
+            spaceBetween: 0,
+          },
+          1560: {
+            slidesPerView: 3.2,
             spaceBetween: 0,
           },
         }}
@@ -40,16 +44,20 @@ export default function ProductsSlides() {
         <Box className="swiper-wrapper">
           {[
             {
-              name: "yellow jerry can",
-              imgSrc: "/images/yellow-jerry-can.jpeg",
+              name: "otedola opening water bottle",
+              imgSrc: "/images/otedola-image1.jpeg",
             },
             {
-              name: "water dispenser",
-              imgSrc: "/images/water-dispenser.jpeg",
+              name: "otedola pouring water",
+              imgSrc: "/images/otedola-image2.jpeg",
             },
             {
-              name: "blue jerry can",
-              imgSrc: "/images/blue-jerry-can.jpeg",
+              name: "otedola closing water bottle",
+              imgSrc: "/images/otedola-image3.jpeg",
+            },
+            {
+              name: "otedola holding water bottle",
+              imgSrc: "/images/otedola-image4.jpeg",
             },
           ].map((item, index) => (
             <SwiperSlide

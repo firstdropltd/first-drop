@@ -49,6 +49,7 @@ export default function ProductPage() {
               width={384}
               height={240}
               alt={blog.title}
+              loading="lazy"
             />
           </Box>
         </Box>
@@ -91,6 +92,7 @@ export default function ProductPage() {
                 width={343}
                 height={240}
                 alt={blog.title}
+                loading="lazy"
               />
             </Box>
           </Box>

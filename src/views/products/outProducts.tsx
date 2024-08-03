@@ -324,6 +324,7 @@ export default function OurProductsTab() {
                       width={261}
                       height={241}
                       alt={product.name}
+                      loading="lazy"
                     />
 
                     <Box className="w-[120px] px-[6px] py-[2px] flex justify-start items-center border border-solid rounded-[6px] border-primary gap-[6px] bg-primary mt-2">
@@ -393,6 +394,7 @@ export default function OurProductsTab() {
                       width={261}
                       height={241}
                       alt={product.name}
+                      loading="lazy"
                     />
                     <Box className="w-[120px] px-[6px] py-[2px] flex justify-start items-center border border-solid rounded-[6px] border-primary gap-[6px] bg-primary mt-2">
                       <Button
@@ -458,6 +460,7 @@ export default function OurProductsTab() {
                       width={261}
                       height={241}
                       alt={product.name}
+                      loading="lazy"
                     />
                     <Box className="w-[120px] px-[6px] py-[2px] flex justify-start items-center border border-solid rounded-[6px] border-primary gap-[6px] bg-primary mt-2">
                       <Button
@@ -523,6 +526,7 @@ export default function OurProductsTab() {
                       width={261}
                       height={241}
                       alt={product.name}
+                      loading="lazy"
                     />
                     <Box className="w-[120px] px-[6px] py-[2px] flex justify-start items-center border border-solid rounded-[6px] border-primary gap-[6px] bg-primary mt-2">
                       <Button
@@ -588,6 +592,7 @@ export default function OurProductsTab() {
                       width={261}
                       height={241}
                       alt={product.name}
+                      loading="lazy"
                     />
                     <Box className="w-[120px] px-[6px] py-[2px] flex justify-start items-center border border-solid rounded-[6px] border-primary gap-[6px] bg-primary mt-2">
                       <Button
@@ -653,6 +658,7 @@ export default function OurProductsTab() {
                       width={261}
                       height={241}
                       alt={product.name}
+                      loading="lazy"
                     />
                     <Box className="w-[120px] px-[6px] py-[2px] flex justify-start items-center border border-solid rounded-[6px] border-primary gap-[6px] bg-primary mt-2">
                       <Button
@@ -718,6 +724,7 @@ export default function OurProductsTab() {
                       width={261}
                       height={241}
                       alt={product.name}
+                      loading="lazy"
                     />
                     <Box className="w-[120px] px-[6px] py-[2px] flex justify-start items-center border border-solid rounded-[6px] border-primary gap-[6px] bg-primary mt-2">
                       <Button
@@ -783,6 +790,7 @@ export default function OurProductsTab() {
                       width={261}
                       height={241}
                       alt={product.name}
+                      loading="lazy"
                     />
                     <Box className="w-[120px] px-[6px] py-[2px] flex justify-start items-center border border-solid rounded-[6px] border-primary gap-[6px] bg-primary mt-2">
                       <Button
@@ -848,6 +856,7 @@ export default function OurProductsTab() {
                       width={261}
                       height={241}
                       alt={product.name}
+                      loading="lazy"
                     />
                     <Box className="w-[120px] px-[6px] py-[2px] flex justify-start items-center border border-solid rounded-[6px] border-primary gap-[6px] bg-primary mt-2">
                       <Button

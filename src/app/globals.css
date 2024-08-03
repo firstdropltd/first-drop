@@ -83,6 +83,15 @@ body {
   font-display: swap;
   font-style: normal;
 }
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: bold;
+  page-break-after: avoid;
+  page-break-inside: avoid;
+}
 html::-webkit-scrollbar {
   width: 4px;
   height: 4px;
